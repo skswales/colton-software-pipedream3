@@ -1,0 +1,399 @@
+Template:
+
+wimp_window {
+  template_name:"pagebreak"
+  visible:164,710,812,778
+  xscroll:0
+  yscroll:0
+  next:
+  window_flags:wimp_WINDOW_MOVEABLE | wimp_WINDOW_AUTO_REDRAW | wimp_WINDOW_NO_BOUNDS | wimp_WINDOW_OPEN | wimp_WINDOW_BACK_ICON | wimp_WINDOW_CLOSE_ICON | wimp_WINDOW_TITLE_ICON | wimp_WINDOW_NEW_FORMAT
+  title_fg:wimp_COLOUR_BLACK
+  title_bg:wimp_COLOUR_LIGHT_GREY
+  work_fg:wimp_COLOUR_BLACK
+  work_bg:wimp_COLOUR_VERY_LIGHT_GREY
+  scroll_outer:wimp_COLOUR_CREAM
+  scroll_inner:wimp_COLOUR_ORANGE
+  highlight_bg:wimp_COLOUR_LIGHT_GREY
+  extra_flags:
+  extent:0,-1024,1280,0
+  title_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED
+  work_flags:wimp_BUTTON_CLICK
+  sprite_area:&1
+  xmin:0
+  ymin:0
+  text.text:"Insert page break"
+  text.size:18
+  text.validation:""
+  wimp_icon {
+    extent:584,-60,636,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_MENU_ICON
+    icon_esg:1
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text_only:"OK"
+  }
+  wimp_icon {
+    extent:426,-60,466,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"‹"
+  }
+  wimp_icon {
+    extent:464,-60,504,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"Š"
+  }
+  wimp_icon {
+    extent:508,-60,580,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"255"
+    text.size:4
+    text.validation:"a0-9"
+  }
+  wimp_icon {
+    extent:4,-60,420,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_INDIRECTED | wimp_ICON_RJUSTIFIED
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text.text:"Number of unbroken lines"
+    text.size:25
+    text.validation:""
+  }
+}
+
+wimp_window {
+  template_name:"decimal"
+  visible:2,904,474,980
+  xscroll:4
+  yscroll:0
+  next:
+  window_flags:wimp_WINDOW_MOVEABLE | wimp_WINDOW_AUTO_REDRAW | wimp_WINDOW_NO_BOUNDS | wimp_WINDOW_OPEN | wimp_WINDOW_BACK_ICON | wimp_WINDOW_CLOSE_ICON | wimp_WINDOW_TITLE_ICON | wimp_WINDOW_NEW_FORMAT
+  title_fg:wimp_COLOUR_BLACK
+  title_bg:wimp_COLOUR_LIGHT_GREY
+  work_fg:wimp_COLOUR_BLACK
+  work_bg:wimp_COLOUR_VERY_LIGHT_GREY
+  scroll_outer:wimp_COLOUR_CREAM
+  scroll_inner:wimp_COLOUR_ORANGE
+  highlight_bg:wimp_COLOUR_LIGHT_GREY
+  extra_flags:
+  extent:0,-1024,1280,0
+  title_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED
+  work_flags:wimp_BUTTON_CLICK
+  sprite_area:&1
+  xmin:0
+  ymin:0
+  text.text:"Decimal places"
+  text.size:15
+  text.validation:""
+  wimp_icon {
+    extent:408,-60,468,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_MENU_ICON
+    icon_esg:1
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text_only:"OK"
+  }
+  wimp_icon {
+    extent:276,-60,316,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"‹"
+  }
+  wimp_icon {
+    extent:312,-60,352,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"Š"
+  }
+  wimp_icon {
+    extent:356,-60,404,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"F"
+    text.size:2
+    text.validation:"a0-9Ff"
+  }
+  wimp_icon {
+    extent:16,-60,268,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_INDIRECTED | wimp_ICON_RJUSTIFIED | wimp_BUTTON_CLICK_DRAG
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text.text:"Decimal places"
+    text.size:15
+    text.validation:""
+  }
+}
+
+wimp_window {
+  template_name:"columnwidth"
+  visible:2,852,678,980
+  xscroll:0
+  yscroll:0
+  next:
+  window_flags:wimp_WINDOW_MOVEABLE | wimp_WINDOW_AUTO_REDRAW | wimp_WINDOW_NO_BOUNDS | wimp_WINDOW_OPEN | wimp_WINDOW_BACK_ICON | wimp_WINDOW_CLOSE_ICON | wimp_WINDOW_TITLE_ICON | wimp_WINDOW_NEW_FORMAT
+  title_fg:wimp_COLOUR_BLACK
+  title_bg:wimp_COLOUR_LIGHT_GREY
+  work_fg:wimp_COLOUR_BLACK
+  work_bg:wimp_COLOUR_VERY_LIGHT_GREY
+  scroll_outer:wimp_COLOUR_CREAM
+  scroll_inner:wimp_COLOUR_ORANGE
+  highlight_bg:wimp_COLOUR_LIGHT_GREY
+  extra_flags:
+  extent:0,-1024,1280,0
+  title_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED
+  work_flags:
+  sprite_area:&1
+  xmin:0
+  ymin:0
+  text.text:"Set column width"
+  text.size:18
+  text.validation:""
+  wimp_icon {
+    extent:608,-120,668,-68
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_MENU_ICON
+    icon_esg:1
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text_only:"OK"
+  }
+  wimp_icon {
+    extent:352,-60,392,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"‹"
+  }
+  wimp_icon {
+    extent:392,-60,432,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"Š"
+  }
+  wimp_icon {
+    extent:436,-60,540,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"255"
+    text.size:4
+    text.validation:"a0-9"
+  }
+  wimp_icon {
+    extent:352,-120,604,-68
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"yyyyy zzzzz"
+    text.size:21
+    text.validation:"aA-Za-z- ,"
+  }
+  wimp_icon {
+    extent:0,-60,348,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_INDIRECTED | wimp_ICON_RJUSTIFIED
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text.text:"New column width"
+    text.size:17
+    text.validation:""
+  }
+  wimp_icon {
+    extent:0,-120,348,-68
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_INDIRECTED | wimp_ICON_RJUSTIFIED
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text.text:"Specify column range"
+    text.size:21
+    text.validation:""
+  }
+}
+
+wimp_window {
+  template_name:"rightmargin"
+  visible:2,852,754,980
+  xscroll:0
+  yscroll:0
+  next:
+  window_flags:wimp_WINDOW_MOVEABLE | wimp_WINDOW_AUTO_REDRAW | wimp_WINDOW_NO_BOUNDS | wimp_WINDOW_OPEN | wimp_WINDOW_BACK_ICON | wimp_WINDOW_CLOSE_ICON | wimp_WINDOW_TITLE_ICON | wimp_WINDOW_NEW_FORMAT
+  title_fg:wimp_COLOUR_BLACK
+  title_bg:wimp_COLOUR_LIGHT_GREY
+  work_fg:wimp_COLOUR_BLACK
+  work_bg:wimp_COLOUR_VERY_LIGHT_GREY
+  scroll_outer:wimp_COLOUR_CREAM
+  scroll_inner:wimp_COLOUR_ORANGE
+  highlight_bg:wimp_COLOUR_LIGHT_GREY
+  extra_flags:
+  extent:0,-1024,1280,0
+  title_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED
+  work_flags:
+  sprite_area:&1
+  xmin:0
+  ymin:0
+  text.text:"Set right margin position"
+  text.size:26
+  text.validation:""
+  wimp_icon {
+    extent:684,-120,744,-68
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_MENU_ICON
+    icon_esg:1
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text_only:"OK"
+  }
+  wimp_icon {
+    extent:428,-60,468,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"‹"
+  }
+  wimp_icon {
+    extent:464,-60,504,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"Š"
+  }
+  wimp_icon {
+    extent:508,-60,612,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"255"
+    text.size:4
+    text.validation:"a0-9"
+  }
+  wimp_icon {
+    extent:428,-120,676,-68
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"yyyyy zzzzz"
+    text.size:22
+    text.validation:"aA-Za-z- ,"
+  }
+  wimp_icon {
+    extent:-20,-60,428,-8
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_INDIRECTED | wimp_ICON_RJUSTIFIED
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text.text:"New right margin position"
+    text.size:26
+    text.validation:""
+  }
+  wimp_icon {
+    extent:-20,-120,428,-68
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_INDIRECTED | wimp_ICON_RJUSTIFIED
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text.text:"Specify column range"
+    text.size:21
+    text.validation:""
+  }
+}
+
+wimp_window {
+  template_name:"insertchar"
+  visible:2,904,476,980
+  xscroll:16
+  yscroll:0
+  next:
+  window_flags:wimp_WINDOW_MOVEABLE | wimp_WINDOW_AUTO_REDRAW | wimp_WINDOW_NO_BOUNDS | wimp_WINDOW_OPEN | wimp_WINDOW_BACK_ICON | wimp_WINDOW_CLOSE_ICON | wimp_WINDOW_TITLE_ICON | wimp_WINDOW_NEW_FORMAT
+  title_fg:wimp_COLOUR_BLACK
+  title_bg:wimp_COLOUR_LIGHT_GREY
+  work_fg:wimp_COLOUR_BLACK
+  work_bg:wimp_COLOUR_VERY_LIGHT_GREY
+  scroll_outer:wimp_COLOUR_CREAM
+  scroll_inner:wimp_COLOUR_ORANGE
+  highlight_bg:wimp_COLOUR_LIGHT_GREY
+  extra_flags:
+  extent:0,-1024,1280,0
+  title_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED
+  work_flags:
+  sprite_area:&1
+  xmin:0
+  ymin:0
+  text.text:"Insert character"
+  text.size:17
+  text.validation:""
+  wimp_icon {
+    extent:420,-64,480,-12
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_MENU_ICON
+    icon_esg:1
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text_only:"OK"
+  }
+  wimp_icon {
+    extent:188,-64,228,-12
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"‹"
+  }
+  wimp_icon {
+    extent:228,-64,268,-12
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_BUTTON_REPEAT
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text_only:"Š"
+  }
+  wimp_icon {
+    extent:272,-64,368,-12
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_WRITABLE
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"255"
+    text.size:4
+    text.validation:"a0-9"
+  }
+  wimp_icon {
+    extent:372,-64,416,-12
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_BORDER | wimp_ICON_HCENTRED | wimp_ICON_VCENTRED | wimp_ICON_FILLED | wimp_ICON_INDIRECTED | wimp_BUTTON_CLICK
+    icon_esg:1
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_WHITE
+    text.text:"C"
+    text.size:2
+    text.validation:""
+  }
+  wimp_icon {
+    extent:0,-64,188,-12
+    icon_flags:wimp_ICON_TEXT | wimp_ICON_VCENTRED | wimp_ICON_RJUSTIFIED
+    icon_esg:0
+    icon_fg:wimp_COLOUR_BLACK
+    icon_bg:wimp_COLOUR_CREAM
+    text_only:"Character"
+  }
+}

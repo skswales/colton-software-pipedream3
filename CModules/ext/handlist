@@ -1,0 +1,209 @@
+/* handlist.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/************************************
+*                                   *
+* defines the external interface to *
+* the handle based list manager     *
+*                                   *
+* MRJC                              *
+* January 1989                      *
+*                                   *
+************************************/
+
+#ifndef __cmodules_handlist_ext
+#define __cmodules_handlist_ext
+
+/*
+types
+*/
+
+typedef struct LISTBLOCK list_block;
+typedef list_block *     list_p;
+
+typedef struct LISTITEM list_item;
+typedef list_item FARP  list_itemp;
+
+typedef struct POOLDESC FARP pooldp;    /* pool descriptor pointer */
+
+/*****************************************************************************
+
+Maximum size of items and pools is 32k; this can be increased on machines
+where the default integer type is more than 2 bytes by altering link_type.
+This adds extra overhead for every item stored by handlist - the overhead is
+now 5 bytes; using 32 bit links would increase the overhead to 9 bytes. 
+off_type must be large enough to hold 1 bit more information than MAX_POOL -
+to allow for overflow during calculations and pool splitting
+
+*****************************************************************************/
+
+#if RISCOS || ARTHUR
+
+typedef long int list_itemno;           /* define to hold biggest item no. */
+typedef long int off_type;				/* type for pool sizes and offsets */
+typedef uword16  link_type;				/* type for inter-item links */
+#define MAX_POOL (32767 - ITEMOVH)		/* maximum size of pool and item */
+
+#elif MS
+
+typedef long int list_itemno;
+typedef uword16  off_type;
+typedef uword16  link_type;
+#define MAX_POOL (32767 - ITEMOVH)
+
+#elif WINDOWS
+
+typedef int list_itemno;
+typedef uword16  off_type;
+typedef uword16  link_type;
+#define MAX_POOL (32767 - ITEMOVH)
+
+#endif
+
+typedef list_itemno *list_itemnop;
+
+/*
+memory handle definition
+*/
+
+#if MS || ARTHUR || RISCOS
+typedef intl mhandle;
+#elif WINDOWS
+typedef HANDLE mhandle;
+#endif
+
+typedef mhandle FARP mhandlep;          /* pointer to a memory handle */
+
+/*
+block increment sizes
+*/
+
+#if MS || WINDOWS || ARTHUR || (RISCOS && defined(SPARSE_STD_ALLOCS))
+#define HANDLEBLOCKINC 100
+#elif RISCOS
+#   if !defined(SPARSE_OLD_HANDLEBLOCK)
+#       define SPARSE_FLEX_HANDLEBLOCK
+#   endif
+#   if defined(SPARSE_ENDJUMPER_DEBUG) || defined(SPARSE_FLEX_HANDLEBLOCK)
+#       define HANDLEBLOCKINC 10
+#       define INITMAXHANDLEBLOCK 30
+#   else
+#       define HANDLEBLOCKINC 500
+#       define INITMAXHANDLEBLOCK 300
+#   endif
+#endif
+
+#define POOLDBLKSIZEINC 5
+
+/*
+data structures
+*/
+
+struct LISTBLOCK
+{
+	off_type itemc;             /* offset to current item */
+	list_itemno item;           /* item number of current pool */
+	pooldp poold;               /* pointer to current pool descriptor */
+
+	mhandle pooldblkh;          /* handle of block of pool descriptors */
+	pooldp pooldblkp;           /* pointer to block of pool descriptors */
+	intl pooldix;               /* number of current pool descriptor */
+	intl pooldblksize;          /* size of block of pool descriptors */
+	intl pooldblkfree;          /* first free in block of pool descriptors */
+
+	list_itemno numitem;        /* number of items in this list */
+	off_type maxitemsize;       /* maximum size of an item */
+	off_type maxpoolsize;       /* maximum size of a pool */
+	off_type poolsizeinc;       /* pool size increment */
+
+	list_p nextblock;           /* link to next list block */
+};
+
+struct LISTITEM
+{
+	link_type offsetn;          /* offset to next item */
+	link_type offsetp;          /* offset to previous item */
+	uchar flags;
+	union guts
+		{
+		list_itemno itemfill;   /* fill count */
+		uchar inside[1];        /* contents of the item */
+		} i;
+};
+
+/*
+flags definition
+*/
+
+#define LIST_FILL 1             /* filler item */
+
+/*
+structure of entry in pool block array
+*/
+
+struct POOLDESC
+{
+	mhandle poolh;
+	bytep pool;
+	list_itemno poolitem;
+	off_type poolsize;
+	off_type poolfree;
+};
+
+/*
+function declarations
+*/
+
+extern mhandle    EXTERNAL list_allochandle(word32 size);
+extern void *     EXTERNAL list_allocptr(word32 bytes);
+extern list_itemp EXTERNAL list_createitem(list_p lp, list_itemno item,
+										   intl size, intl fill);
+extern void       EXTERNAL list_deallochandle(mhandle mh);
+extern void       EXTERNAL list_deallocptr(void *mempnt);
+extern void       EXTERNAL list_deleteitems(list_p lp, list_itemno item,
+											list_itemno numdel);
+extern void       EXTERNAL list_deregister(list_p lp);
+extern void       EXTERNAL list_disposehandle(mhandlep mhp);
+extern void       EXTERNAL list_disposeptr(void **mempntp);
+extern intl       EXTERNAL list_ensureitem(list_p lp, list_itemno item);
+extern intl       EXTERNAL list_entsize(list_p lp, list_itemno item);
+extern void       EXTERNAL list_free(list_p lp);
+extern word32     EXTERNAL list_freepoolspace(word32 needed);
+extern intl       EXTERNAL list_garbagecollect(list_p lp);
+extern memp       EXTERNAL list_getptr(mhandle hand);
+extern word32     EXTERNAL list_howmuchpoolspace(void);
+extern list_itemp EXTERNAL list_gotoitem(list_p lp, list_itemno item);
+extern list_itemp EXTERNAL list_igotoitem(list_p lp, list_itemno item);
+extern void       EXTERNAL list_init(list_p lp, intl maxitemsize,
+									 intl maxpoolsize);
+extern list_itemp EXTERNAL list_initseq(list_p lp, list_itemnop itemnop);
+extern intl       EXTERNAL list_insertitems(list_p lp, list_itemno item,
+											list_itemno numins);
+extern list_itemp EXTERNAL list_nextseq(list_p lp, list_itemnop itemnop);
+extern word32     EXTERNAL list_packlist(list_p lp, word32 needed);
+extern list_itemp EXTERNAL list_prevseq(list_p lp, list_itemnop itemnop);
+extern mhandle    EXTERNAL list_reallochandle(mhandle hand, word32 size);
+extern void *     EXTERNAL list_reallocptr(void *mempnt, word32 bytes);
+extern void       EXTERNAL list_register(list_p lp);
+extern void       EXTERNAL list_unlock_handle(mhandle hand);
+extern intl       EXTERNAL list_unlockpools(void);
+
+/*
+functions as macros
+*/
+
+#define list_atitem(lp)   ((lp) ? (lp)->item : 0)
+#define list_leapnext(it) (((it)->flags & LIST_FILL) \
+								? (it)->i.itemfill   \
+								: 1)
+#define list_numitem(lp)  ((lp) ? (lp)->numitem : 0)
+
+#endif /* __cmodules_handlist_ext */
+
+/* end of handlist.ext */

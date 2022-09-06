@@ -1,0 +1,57 @@
+/* pd.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*
+ * Title:       pd.ext - bits exported out of PipeDream to RISC OS module
+ * Author:      Stuart K. Swales 30 Jan 1989
+*/
+
+/* requires "datafmt.h" */
+/*          "ext.riscos" */
+
+/* exported functions */
+
+/* from pdmain.c */
+
+extern BOOL act_on_c(intl c);
+extern void application_process_command(intl c);
+extern BOOL application_process_key(intl c);
+extern int  main(int argc, char *argv[]);
+
+
+/* from mcdiff.c */
+
+extern gcoord gcoord_x(coord x);
+extern gcoord gcoord_y(coord y);
+extern void wrch_definefunny(intl ch);
+extern void wrch_undefinefunnies(void);
+
+
+/* from dialog.c */
+
+extern void get_dialog_text(intl boxnumber, intl item, char *array /*out*/);
+
+
+/* from commlin.c */
+
+extern BOOL get_menu_item(MENU_HEAD *header, MENU *mptr, char *array /*out*/);
+
+
+/* from somewhere */
+
+extern BOOL str_isblank(const char *str); /* is string only spaces? */
+
+extern void maybe_draw_screen(void);
+
+extern void application_drag(gcoord x, gcoord y, BOOL ended);
+extern void get_slr_for_point(gcoord x, gcoord y, BOOL selectclicked, 
+                    char *buffer /*out*/);
+
+
+/* end of pd.ext */

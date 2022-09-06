@@ -1,0 +1,83 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+# Copyright (C) 1989-1998 Colton Software Limited
+# Copyright (C) 1998-2015 R W Colton
+
+# MakeFile for C modules
+# include the appropriate part of this in your own MakeFile
+
+# Hand-welded together by SKS 08-May-1989
+
+# Requires CC defined
+
+CPM=$(CC) -i,
+CMODULES=$.CModules
+
+
+# Clean module bits
+
+cleanmodul:		$(LATESTDATE)
+				star remove o.alloc
+				star remove o.handlist
+				star remove o.pd123
+				star remove o.123pd
+				star remove o.spell
+				star remove o.vsload
+				star remove o.z88com
+
+
+# Module bits
+
+o.alloc:		$(CMODULES).c.alloc \
+				$(CMODULES).h.alloc \
+				$(CMODULES).ext.alloc
+				$(CPM) $(CMODULES).alloc.c $(CCOPTIONS)
+				star settype o.alloc aof
+
+o.handlist:		$(CMODULES).c.handlist \
+				$(CMODULES).h.handlist \
+				$(CMODULES).ext.handlist
+				$(CPM) $(CMODULES).handlist.c $(CCOPTIONS)
+				star settype o.handlist aof
+
+o.file:			$(CMODULES).c.file \
+				$(CMODULES).ext.file
+				$(CPM) $(CMODULES).file.c $(CCOPTIONS)
+				star settype o.file aof
+
+o.pd123:		$(CMODULES).c.pd123 \
+				$(CMODULES).h.pd123 \
+				$(CMODULES).ext.pd123
+				$(CPM) $(CMODULES).pd123.c $(CCOPTIONS)
+				star settype o.pd123 aof
+
+o.123pd:		$(CMODULES).c.123pd \
+				$(CMODULES).h.pd123 \
+				$(CMODULES).ext.pd123
+				$(CPM) $(CMODULES).123pd.c $(CCOPTIONS)
+				star settype o.123pd aof
+
+o.spell:		$(CMODULES).c.spell \
+				$(CMODULES).h.spell \
+				$(CMODULES).ext.spell
+				$(CPM) $(CMODULES).spell.c $(CCOPTIONS)
+				star settype o.spell aof
+
+o.vsload:		$(CMODULES).c.vsload \
+				$(CMODULES).h.vsload \
+				$(CMODULES).ext.vsload
+				$(CPM) $(CMODULES).vsload.c $(CCOPTIONS)
+				star settype o.vsload aof
+
+o.z88com:		$(CMODULES).c.z88com \
+				$(CMODULES).h.z88com \
+				$(CMODULES).ext.z88com
+				$(CPM) $(CMODULES).z88com.c $(CCOPTIONS)
+				star settype o.z88com aof
+
+# o.sbscr not made as that's for the PC
+
+
+# end of MakeFile (CMODULES include)

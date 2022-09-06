@@ -1,0 +1,12 @@
+IfThere <Obey$Dir>.ccres Then Else IfThere Run:ccres Then Else Error 0 Put a copy of ccres in this directory or in your library
+Dir <Obey$Dir>
+Remove              txt_out
+Print txt_main {  > txt_out }
+Print txt_bc   { >> txt_out }
+Print txt_el   { >> txt_out }
+Print txt_f    { >> txt_out }
+Print txt_p    { >> txt_out }
+Print txt_s    { >> txt_out }
+SetType             txt_out Text
+ccres txt_out tem_out
+Back

@@ -1,0 +1,69 @@
+ReadMe for PipeDream 3 Build
+----------------------------
+
+** This Source Code Form is subject to the terms of the Mozilla Public
+** License, v. 2.0. If a copy of the MPL was not distributed with this
+** file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+** Copyright (C) 2021-2022 Stuart Swales
+
+Prerequisites
+-------------
+
+26-bit build:
+A RISC OS 3.1 (or later) system with C Release 3.1B (and selected bits of C Release 5).
+RPCEmu Easy Start Bundle 3.71 is well suited to the task.
+The application can run on RISC OS 2.0 (and later) systems with their ancient SharedCLibrary.
+
+32-bit build:
+A RISC OS 5 system with ROOL DDE Release 30c or later (C compiler, headers, libraries, linker, !Amu).
+The application can run on RISC OS 3.1 (and later) systems with a suitably modern SharedCLibrary.
+
+
+Zip (install with PackMan) for creating a zip of the final build.
+
+
+First-time configuration and build
+----------------------------------
+
+Ensure that the system has 'seen' AcornC/C++ and set that environment.
+
+Run the appropriate !SetEnvXX to set up the PipeDream 3 build environment.
+
+If you are building a 26-bit version, !SetEnv26 will prompt you to put
+copies of various C headers and tools that are needed into Library26.
+
+Run !Amu.
+
+In CWimp.r32, double-click '__Clean' and then drag 'Makefile' to !Amu.
+
+In pd.r32, double-click '__Clean' and then drag 'Makefile' to !Amu.
+
+This variant builds !PipeDrea3, renamed to avoid interfering with any PipeDream 4 that may be installed.
+
+
+Subsequent builds
+-----------------
+
+After any reboot, you will need to:
+
+Ensure that the system has 'seen' AcornC/C++ and set that environment.
+
+Run the appropriate !SetEnvXX to set up the PipeDream 3 build environment.
+
+Run !Amu.
+
+In pd.r32, drag 'Makefile' to !Amu.
+
+It's unlikely you'll want to change anything in CWimp!
+
+
+Creating a package for distribution
+----------------------------------- 
+
+Make sure you've got the version number consistent! See version.c for notes.
+
+Execute the Obey file r32.MakeRiscPkg.
+
+This will copy only those files needed for distribution to PipeDream3_3_xx_yy
+in $.Temp and create the corresponding distributable ZIP package file.

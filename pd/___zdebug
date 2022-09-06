@@ -1,0 +1,2 @@
+see <<< TODO
+{char buffer[128];sprintf(buffer,"dcst %p &p",tcolstart,cp);reperr(1,buffer);been_error=FALSE;}

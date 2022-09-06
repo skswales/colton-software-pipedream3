@@ -1,0 +1,83 @@
+| CopyToTemp for PipeDream 3
+|
+| This Source Code Form is subject to the terms of the Mozilla Public
+| License, v. 2.0. If a copy of the MPL was not distributed with this
+| file, You can obtain one at https://mozilla.org/MPL/2.0/.
+|
+| Copyright (C) 2020-2022 Stuart Swales
+
+| Caller must Set pd$Disc
+If "<pd$Disc>"="" Then Error pd$Disc must be specified. Did you mean to run MakeRiscPkg?
+
+%CDir                                                           <pd$Disc>
+
+| Resources from build
+Set bld$Resources$Dir   <Obey$Dir>.!PipeDrea3.Resources
+
+|
+| Top level, contains just Apps (RiscPkg added by caller if required)
+|
+%CDir                                                           <pd$Disc>.Apps
+%CDir                                                           <pd$Disc>.Apps.Document
+
+| Directory is renamed at the end
+%CDir                                                           <pd$Disc>.Z
+
+%Copy <Obey$Dir>.!PipeDrea3.!Boot                               <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.!Help                               <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.!Path                               <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.!Run                                <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.!RunImage                           <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.!Sprites                            <pd$Disc>.Z.* ~rf~cln~v
+|
+| Static resources - Window Templates
+%Copy <Obey$Dir>.!PipeDrea3.Templates                           <pd$Disc>.Z.* ~rf~cln~v
+|
+| PDrivers
+|
+| Language-dependent (although I can't seem them being translated!)
+%Copy <Obey$Dir>.!PipeDrea3.fx80                                <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.HPJet                               <pd$Disc>.Z.* ~rf~cln~v
+%Copy <Obey$Dir>.!PipeDrea3.juki                                <pd$Disc>.Z.* ~rf~cln~v
+|
+| DictDefn
+|
+%Copy <Obey$Dir>.!PipeDrea3.ODctDefn                            <pd$Disc>.Z.* ~rf~cln~v
+| Language-dependent (UK)
+||| %CDir                                                           <pd$Disc>.Z.DictDefn
+||| %Copy <Obey$Dir>.!PipeDrea3.DictDefn.English                    <pd$Disc>.Z.DictDefn.* ~rf~cln~v
+||| %Copy <Obey$Dir>.!PipeDrea3.DictDefn.Latin1                     <pd$Disc>.Z.DictDefn.* ~rf~cln~v
+||| %Access                                                         <pd$Disc>.Z.DictDefn.* r/r
+
+| Use the same licence in the distributed package
+%Copy <Obey$Dir>.RiscPkg.Copyright                              <pd$Disc>.Z.LICENCE ~rf~cln~v
+
+%Access                                                         <pd$Disc>.Z.* r/r
+
+|
+| Dicts (not read-only)
+|
+| Language-dependent (UK)
+%Copy <Obey$Dir>.!PipeDrea3.dct                                 <pd$Disc>.Z.* ~rf~cln~v
+
+%Rename <pd$Disc>.Z                                             <pd$Disc>.Apps.Document.!PipeDrea3
+
+
+| Add the Examples disc too
+
+| Obey
+| ^^^ Uncomment to stop the Examples being added to the package
+
+| Directory is renamed at the end
+%CDir                                                           <pd$Disc>.Z
+
+%Copy <Obey$Dir>.^.^.Examples.*                                 <pd$Disc>.Z.* ~rf~cln~v
+
+%CDir                                                           <pd$Disc>.Z.Examples
+
+%Copy <Obey$Dir>.^.^.Examples.Examples.*                        <pd$Disc>.Z.Examples.* ~rf~cln~v
+
+%Rename <pd$Disc>.Z                                             <pd$Disc>.Apps.Document.PD3_Exam
+
+| Not an svn export, but a careful copy of components, so no need to do tidying like
+| %Remove <pd$Disc>.CopyToTemp

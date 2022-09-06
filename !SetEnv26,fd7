@@ -1,0 +1,34 @@
+| This Source Code Form is subject to the terms of the Mozilla Public
+| License, v. 2.0. If a copy of the MPL was not distributed with this
+| file, You can obtain one at https://mozilla.org/MPL/2.0/.
+|
+| Copyright (C) 2021-2022 Stuart Swales
+|
+Set PD3DevRoot$Dir <Obey$Dir>
+
+Set CModules$Dir <PD3DevRoot$Dir>.CModules
+Set CModules$Path <CModules$Dir>.
+
+URD <PD3DevRoot$Dir>
+Dir &
+Set AMU_PD3DevRoot <PD3DevRoot$Dir>
+
+| For RISC OS 3.71 RPCEmu Easy Start Bundle
+Set Run$Path <Run$Path>,<PD3DevRoot$Dir>.Library26.
+
+X CDir <PD3DevRoot$Dir>.Library26
+X CDir <PD3DevRoot$Dir>.Library26.v31B
+
+IfThere Run:v31B.cc       Then Else Error 0 Create directory Library26.v31B and put a copy of cc from C Release 3.1B in there
+IfThere Run:v31B.h.kernel Then Else Error 0 Create directory Library26.v31B and put a copy of the h directory from C Release 3.1B in there
+IfThere Run:v31B.o.Stubs  Then Else Error 0 Create directory Library26.v31B and put a copy of the o directory from C Release 3.1B in there
+IfThere Run:v500.link     Then Else Error 0 Create directory Library26.v500 and put a copy of link from C Release 5 in there
+
+IfThere Run:v31B.cc      Then Else Error 0 Create directory Library26.v31B and put a copy of cc from C Release 3.1B in there (needed for CWimp build)
+IfThere Run:objasm       Then Else Error 0 Create directory Library26 and put a copy of objasm from C Release 5 in there (needed for CWimp build)
+IfThere Run:v401.libfile Then Else Error 0 Create directory Library26.v401.libfile and put a copy of libfile from C Release 4.01 in there (needed for CWimp build)
+
+If "<Hdr$Path>"="" Then Set Hdr$Path $.AcornC_C++.DDE-Export.APCS-32.Hdr.Global.
+IfThere Hdr:Macros Then Else Error 0 You will need to grab a copy of the Hdr directory from a modern DDE
+
+Filer_OpenDir <PD3DevRoot$Dir>.pd.r26

@@ -1,0 +1,58 @@
+/* ext.alloc */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1988-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/* Title:		alloc.ext - allocation in an extensible flex block
+ * Author:		Stuart K. Swales 23-Aug-1989
+*/
+
+#ifndef __cmodules__alloc_ext
+#define __cmodules__alloc_ext
+
+/* exported functions */
+
+/* NB. these functions may move flex blocks when used */
+
+extern void  *alloc_calloc(size_t num, size_t size);
+extern void   alloc_dispose(void **v);
+extern void   alloc_free(void *a);
+extern int    alloc_init(void);
+extern void  *alloc_malloc(size_t size);
+extern void  *alloc_realloc(void *a, size_t size);
+extern size_t alloc_size(void *a);
+extern void   alloc_tidy_up(void);
+
+#if TRACE
+extern int    alloc_largestfree(void);
+extern void   alloc_limits(void **start, void **end, int *size, int *free);
+extern int    alloc_totalfree(void);
+extern void   alloc_traversefree(void);
+#endif
+
+#if !defined(OLD_ALLOCS)
+/* Redirect allocation functions to new entries */
+#	define	calloc	alloc_calloc
+#	define	dispose	alloc_dispose
+#	define	free	alloc_free
+#	define	malloc	alloc_malloc
+#	define  realloc alloc_realloc
+#endif
+
+#if defined(EXPORT_FIXED_ALLOCS)
+/* functions that use the old allocation system
+ * and therefore do not move memory when used
+*/
+extern void  fixed_dispose(void **v);
+extern void  fixed_free(void *a);
+extern void *fixed_malloc(size_t size);
+extern void *fixed_realloc(void *a, size_t size);
+#endif
+
+#endif	/* __cmodules__alloc_ext */
+
+/* end of alloc.ext */

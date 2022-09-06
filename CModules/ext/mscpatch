@@ -1,0 +1,39 @@
+/* mscpatch.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1990-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*************************************************
+*                                                *
+* external header file for module mscpatch.c     *
+* SKS                                            *
+* February 1990                                  *
+*                                                *
+*************************************************/
+
+#ifndef __cmodules_mscpatch_ext
+#define __cmodules_mscpatch_ext
+
+#if LLIB && (defined(M_I86SM) || defined(M_I86CM)) && defined(MSCPATCH)
+
+extern unsigned long EXTERNAL ulshl(unsigned long ulval, int sval);
+extern unsigned long EXTERNAL ulshr(unsigned long ulval, int sval);
+extern int			 EXTERNAL ftoi(double dval);
+extern long			 EXTERNAL ftol(double dval);
+
+#else
+
+#define ulshl(ulval, sval)	((ulval) << (sval))
+#define ulshr(ulval, sval)	((ulval) >> (sval))
+#define ftoi(dval)			((int)  (dval))
+#define ftol(dval)			((long) (dval))
+
+#endif
+
+#endif	/* __cmodules_mscpatch_ext */
+
+/* end of mscpatch.ext */

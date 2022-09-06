@@ -1,0 +1,3 @@
+| !PipeDrea3.!Path
+|
+SetMacro PipeDrea3$Path <PipeDrea3$Dir>.

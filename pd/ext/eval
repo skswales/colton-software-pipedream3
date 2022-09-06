@@ -1,0 +1,32 @@
+/* eval.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1988-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*************************************
+*                                    *
+* external header file for PipeDream *
+* expression compiler                *
+* MRJC                               *
+* May 1988                           *
+*                                    *
+*************************************/
+
+/*
+function declarations
+*/
+
+extern void calshe(void);
+extern void evasto(slotp tslot, colt tcol, rowt trow);
+extern intl exp_compile(uchar *, char *, BOOL *, intl);
+extern intl exp_decompile(char *, uchar *);
+extern void exp_eval(uchar *);
+extern uchar *exp_findslr(uchar *);
+extern void exp_initslr(void);
+extern intl exp_len(uchar *);
+
+/* end of eval.ext */

@@ -1,0 +1,30 @@
+/* typepack.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*************************************************
+*                                                *
+* external header file for module typepack.c     *
+* MRJC                                           *
+* November 1989                                  *
+*                                                *
+*************************************************/
+
+extern double   EXTERNAL readdouble(bytep arg);
+extern uword32  EXTERNAL readuword(bytep from, intl size);
+extern uword16  EXTERNAL readuword16(bytep arg);
+extern uword32  EXTERNAL readuword32(bytep arg);
+extern word16   EXTERNAL readword16(bytep arg);
+
+extern intl     EXTERNAL writedouble(bytep to, double dval);
+extern intl     EXTERNAL writeuword(bytep to, uword32 word, intl size);
+extern intl     EXTERNAL writeuword16(bytep to, uword16 word);
+extern intl     EXTERNAL writeuword32(bytep to, uword32 word);
+extern intl     EXTERNAL writeword16(bytep to, word16 word);
+
+/* end of typepack.ext */

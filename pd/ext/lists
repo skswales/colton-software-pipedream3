@@ -1,0 +1,55 @@
+/* lists.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/**********************************************
+*                                             *
+* external definitions for lists in PipeDream *
+* MRJC                                        *
+* March 1989                                  *
+*                                             *
+**********************************************/
+
+#if ARTHUR || RISCOS
+#   include "ext.handlist"
+#else
+#   include "handlist.ext"
+#endif
+
+/*
+data definition
+*/
+
+struct _list
+    {
+    word32 key;
+    uchar value[1];
+    };
+
+typedef struct _list LIST;
+
+/*
+function declarations
+*/
+
+extern LIST * add_list_entry(list_block **list, intl size, intl *resp);
+extern intl   add_to_list(list_block **list, word32 key, const uchar *str, intl *resp);
+extern BOOL   delete_from_list(list_block **list, word32 key);
+extern void   delete_list(list_block **);
+extern intl   duplicate_list(list_block **dst, /*const*/ list_block **src);
+extern LIST * search_list(list_block **first_one, word32 target);
+extern LIST * first_in_list(list_block **);
+extern LIST * next_in_list(list_block **);
+
+/*
+error returns
+*/
+
+#define LISTS_ERR_NOTFOUND -2
+
+/* end of lists.ext */

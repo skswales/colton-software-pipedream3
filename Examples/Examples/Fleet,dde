@@ -1,0 +1,114 @@
+%OP%DP0
+%OP%TPK
+%CO:A,16,68%%L%Car Lovers Ltd. 
+Company fleet
+
+Porsche Carrera RS
+Peugeot 205 GTI 1.9
+AC Cobra Mk II
+Morgan Plus 8
+Jaguar D type
+Jaguar XJ6
+Ferrari 250 SWB
+Audi Quattro
+Ford Sierra Cosworth RS
+Ferrari 308 GTB
+Jaguar XJS
+VW Golf GTI 16V
+Lancia Delta HF Integrale
+Ferrari Daytona
+Porsche 944 Turbo
+Ferrari 250 GTO
+
+Totals
+
+
+%CO:B,12,52%%CO:C,12,0%
+
+%R%Value
+%V%%R%%TC%%D0%30
+%V%%R%%TC%%D0%9
+%V%%R%%TC%%D0%90
+%V%%R%%TC%%D0%18
+%V%%R%%TC%%D0%375
+%V%%R%%TC%%D0%27
+%V%%R%%TC%%D0%500
+%V%%R%%TC%%D0%26
+%V%%R%%TC%%D0%18
+%V%%R%%TC%%D0%35
+%V%%R%%TC%%D0%21
+%V%%R%%TC%%D0%10
+%V%%R%%TC%%D0%20
+%V%%R%%TC%%D0%160
+%V%%R%%TC%%D0%28
+%V%%R%%TC%%D0%1000
+
+%V%%R%%TC%%D0%sum(C4C20)
+%CO:D,9,28%
+
+%R%Cpcity
+%V%%R%2700
+%V%%R%1900
+%V%%R%4700
+%V%%R%3500
+%V%%R%3800
+%V%%R%3600
+%V%%R%3300
+%V%%R%2200
+%V%%R%2000
+%V%%R%3000
+%V%%R%5300
+%V%%R%1800
+%V%%R%2000
+%V%%R%4400
+%V%%R%2500
+%V%%R%3300
+
+%V%%R%sum(D4D20)/count(D4D20)
+
+%CO:E,7,0%
+
+%R%Cyls
+%V%%R%6
+%V%%R%4
+%V%%R%8
+%V%%R%8
+%V%%R%6
+%V%%R%6
+%V%%R%12
+%V%%R%5
+%V%%R%4
+%V%%R%8
+%V%%R%12
+%V%%R%4
+%V%%R%4
+%V%%R%12
+%V%%R%4
+%V%%R%12
+
+Average 
+Capacity
+%CO:F,12,12%
+
+%R%Reg.
+%R%RS 27
+%R%D205 GTI
+%R%289 COB
+%R%PLS 8
+%R%D 1
+%R%XJ 6
+%R%SWB 250
+%R%AUD 1
+%R%COS 500
+%R%GTB 308
+%R%V 12
+%R%E16 VVW
+%R%E4 WDR
+%R%1 DAY
+%R%THE 944T
+%R%1 MIL
+
+
+
+
+

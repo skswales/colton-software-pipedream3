@@ -1,0 +1,385 @@
+%OP%DFT
+%OP%TM4
+%OP%HM4
+%OP%FM4
+%OP%BM4
+%CO:A,72,72%%H2%Changes between PipeDream 2 and PipeDream 3
+
+The following is a brief introduction to the differences between 
+versions 2 and 3 of PipeDream.  It is intended as a quick reference for 
+users of previous versions of PipeDream to see what is available.  It 
+does not attempt to go into detail over the new facilities - for this 
+you will need to refer to the PipeDream User Guide.
+
+%H2%Operating Systems
+
+PipeDream version 3 works only under RISC OS and not under Arthur 1.2 
+or earlier versions.  PipeDream version 2 works under both Arthur 1.2 
+and RISC OS. 
+
+%H2%SpellCheck
+
+PipeDream version 3 incorporates PipeDream SpellCheck whereas 
+SpellCheck was a separate option for PipeDream version 2.
+
+%H2%Installation
+
+Installation is much easier.  It comprises making a backup of the 
+PipeDream master disc to a PipeDream working disc from which you will 
+run PipeDream 3. The first time you run PipeDream 3 you will be asked 
+to enter your name which will be included in the PipeDream program from 
+then on.  Your PipeDream 3 disc also has a unique registration number 
+identifying all working discs as having come from your master.
+
+Having installed PipeDream fill in the registration card and return it 
+to Colton Software.  You will then be a registered user. Only 
+registered users are entitled to telephone support and upgrades to new 
+releases.
+
+Note that the unique registration number on the disc enables us to 
+trace copies of your master disc.  You are allowed and welcome to make 
+backup copies of the disc for your own use but you are not allowed to 
+make copies of the disc for anyone else to use.  If you are unsure of 
+your rights read the disc envelope carefully or phone Colton Software 
+for guidance.
+
+Software piracy is theft.  Thieves hurt genuine users just as much as 
+they hurt software houses through giving upwards pressure on prices.  
+We don't believe that the best way to stamp out software piracy is to 
+protect discs because that makes life difficult for genuine users - the 
+overwhelming majority.  Having unique registration numbers enables us 
+to trace illegal copies very easily and to prosecute offenders 
+effectively.
+
+%H2%User Interface
+
+PipeDream has been completely rewritten to take advantage of RISC OS in 
+as many ways as possible.  A PipeDream document now appears in a window 
+on the screen.  All of the resizing, scrolling and pointing operations 
+are available, as are many drag and clicking operations.  The result is 
+that PipeDream operates very much like Edit, rather than previous 
+versions of PipeDream which took over the screen and took (almost) all 
+input from the keyboard.
+
+%H2%Many documents
+
+PipeDream can cope with as many documents all loaded at once as can be 
+fitted into memory.  Each document appears in its own window.  Note 
+that it is one copy of PipeDream in the computer that is doing this, 
+not one PipeDream for each window, so many documents can be loaded even 
+on a 1Mbyte computer.
+
+To see this in action make a selection of files in a directory viewer 
+and drag the selection to the PipeDream icon on the icon bar.  Each 
+file will be loaded into a new PipeDream window.
+
+Blocks of data can be copied and moved between windows by marking a 
+block in one window, positioning the caret in another and giving the 
+relevant command.
+
+%H2%Recovering deletions
+
+PipeDream 2 remembered words and phrases that had been deleted and they 
+could be recovered using the Paste command.  PipeDream 3 can also 
+recover deleted rows, columns and blocks.  It maintains a list of up to 
+255 deletions (the default is 50 and is configurable between 0-255) 
+which can be pasted back into the text and any point by positioning the 
+caret at the insertion point and giving the Paste command.
+
+A block can be moved between windows by deleting it from one window and 
+pasting it into another.
+
+A new command Copy Block to Buffer is also provided which copies the 
+the marked block to the paste list without deleting it from the text. 
+It can be pasted in at any point, so that a copy of it is made.
+
+%H2%Natural Recalculation
+
+In addition to recalculating by row or column PipeDream 3 has natural 
+recalculation.  This resolves problems of forward references where the 
+spreadsheet might have to be recalculated more than once before all of 
+the values were up-to-date.  With automatic recalculation on, it is 
+usually significantly faster, as only those slots that change value, 
+rather than all slots in the spreadsheet, are recalculated.
+
+Natural recalculation requires extra memory to record the information 
+as to which slots affect which others.  If PipeDream runs out of memory 
+it will automatically switch to recalculation by column, giving a 
+message saying it is doing so.  
+
+%H2%Background, interruptible recalculation
+
+PipeDream's recalculation is performed in short time-slices in the 
+background so you can continue with other tasks whilst recalculation is 
+proceeding.
+
+%H2%Memory Usage
+
+PipeDream 3 employs greater data compaction and more sparse matrix 
+techniques enabling larger files to be loaded into the same amount of 
+memory.  The amount of improvement will depend upon the data but, in 
+general, the sparser the file (ie the more blank slots there are) the 
+greater the improvement. 
+
+Additionally PipeDream communicates intelligently with RISC OS to use 
+only the amount of memory it needs at any time, giving memory back to 
+the system when it is no longer needed.  It is very important for 
+applications to cooperate in this way in a multi-tasking environment so 
+that the very most may be made of the available memory (because there 
+is never enough of it).  Applications cooperating in this manner are 
+more usable and less frustrating.
+
+%H2%Insert on return
+
+Users of other word processors often prefer the current line to be 
+split when they press the Return key and for the two lines to be joined 
+again when a delete backwards is made at the beginning of the line or a 
+delete forwards at the end of the line.  Others don't.
+
+A new option Insert on return in the Options dialogue box enables users 
+to set this either way.  Its status can also be saved in the 
+initialisation file so that it is permanently the way you want it to 
+be.
+
+%H2%Replicate
+
+There are two new commands which, in most cases, make replication 
+faster and smoother than the using the Replicate command.  Replicate 
+Right (Ctrl BRR) copies the left-most column of a marked block to all 
+of the other columns in the block.  Replicate Down (Ctrl BRD) copies 
+the top row of a block to all of the other rows in the block.  Since 
+blocks can be marked very easily by dragging the mouse from one corner 
+to an opposite corner and the commands can be selected from the menu 
+with the mouse a replicate can be done very quickly without touching 
+the keyboard.
+
+The old command Replicate is still present and is the same as before.  
+
+%H2%Alt-key sequences
+
+In addition to the selection of commands from menus by using the mouse 
+the hot-key sequences have been retained and are similar to those on 
+all other versions of PipeDream.  Unfortunately however it was 
+necessary for PipeDream to change to use the Ctrl key rather than the 
+Alt keys as the shifting key.  This is because the specification of the 
+Alt key was changed by Acorn to be used with foreign character sets, 
+after PipeDream version 2 was written .  It was not possible within the 
+rules of RISC OS for PipeDream to use the Alt key as a shifting key.
+
+So on the Z88 the shifting key is <>, on the PC and Archimedes 
+PipeDream version 2 it is Alt, and on RISC OS PipeDream it is Ctrl.  It 
+is, of course, usually preferable to select commands from menus with 
+the mouse.
+
+The changes to the Alt key also mean that it is no longer possible for 
+Alt + function key to be defined by the user.
+
+%H2%Previous match (Ctrl BPM)
+
+Previous match is the opposite of Next match and moves the caret back 
+to the previous occurrence of the string given in the Search dialogue 
+box.  It is most useful when inadvertently giving too many Next match 
+commands but can be used for searching a file backwards if you so 
+desire.
+
+%H2%Subgrams (Ctrl SH)
+
+Subgrams are like anagrams without the restriction that all letters of 
+the original word must be used.  eg a, me, mad, dame and armed are all 
+subgrams of Dream.  This feature will help you to impress your friends 
+with your massive vocabulary and win newspaper competitions.
+
+%H2%Carriage return and linefeed
+
+The position with Archimedes software and carriage returns (CR) and 
+linefeeds (LF) seems to be a little confused.  Some editors use CR as 
+their line separator (deriving from BBC days), some editors use LF 
+(deriving from UNIX), some editors use CR,LF (deriving from CP/M and 
+MS-DOS).  It would be helpful if all editors could automatically load 
+files of any type (like PipeDream can) but, sadly, this is not the 
+case.  So PipeDream 3 has an option in the Save dialogue box which 
+enables to specify what line separator to save the file with.  The 
+options are CR, LF, CR+LF, LF+CR.
+
+%H2%Negative numbers
+
+Negative numbers in expression slots can be displayed on the screen in 
+a different colour to the rest of the text.  This can be very striking 
+when the colour chosen is red.
+
+%H2%Centre window
+
+This new command is provided to position the line containing the caret 
+in the middle of the window.
+
+%H2%Fixed rows and columns
+
+The status of fixed rows and columns is now saved with the file.
+
+%H2%Sorting
+
+Sorting in PipeDream 3 is several times faster than version 2 (the 
+exact factor depending on the data file).  PipeDream 3 can now sort 
+multi-row records. Rows that are blank in the first key field are bound 
+to the first row above that is not blank in the first key field.  This 
+enables records containing paragraphs of text, for example, to be 
+sorted.
+
+%H2%Date format
+
+A textual date format has been provided in addition to displaying dates 
+in English or American formats.
+
+%H2%File formats
+
+PipeDream can now load and save VIEW files, can load ViewSheet files 
+and can save Acorn DTP files.
+
+%H2%Thousands
+
+PipeDream 3 can display large numbers in a variety of ways.  Several 
+separators can be used to separate thousands and millions.  For example
+
+  1234567.89
+1 234 567.78
+1,234,567.89
+1.234.567,89
+
+%H2%Database functions
+
+The syntax of database functions has been improved.  In PipeDream 2 the 
+$ operator was used to determine both whether the slot reference should 
+be updated during replication and also whether the slot reference 
+should be updated during recalculation.  In PipeDream 3 each od these 
+has its own operator.  $ is still used to determine whether the slot 
+reference should be updated during replication.  # is used to determine 
+whether the slot reference should be updated during recalculation.
+
+This change means that database functions written in files for 
+PipeDream 2 may produce different results in PipeDream 3 and database 
+functions written in files for Pipedream 3 may not be accepted in 
+Pipedream 2.  When converting files from PipeDream 2 to Pipedream 3 it 
+is usually necessary to either replace $ signs in the condition string 
+with a # or add a # and retain the $.
+
+%H2%Spreadsheet functions
+
+The following new spreadsheet functions have been provided:
+
+ATN2(x,y)
+MONTHDAYS(date)
+
+RAND(n)
+ROUND(n,p)
+ROW(),COL()
+
+DCOUNTA(range,condition)
+
+%H2%Printing
+
+As well as having its own printer driver system, PipeDream 3 can also 
+print using the RISC OS printer drivers supplied by Acorn.  Which 
+method you use is up to you.  The PipeDream drivers will usually be 
+much faster than the RISC OS drivers because they just sending out 
+lines of characters, whereas the RISC OS drivers build up pages of 
+bit-mapped graphics.  Only the RISC OS drivers can print pictures and 
+fonts.
+
+Extra options have been added to the Print dialogue box to print 
+multiple copies and two-sided printing.  Two-sided printing is 
+reversing the order of parameters in headers and footers on even 
+numbered (left-hand) pages and printing extra characters in the left 
+margin of odd numbered (right-hand) pages.  Note that it is not the far 
+more useful ability to print on both sides of the paper without your 
+turning it over.  (That's a hardware problem.)
+
+%H2%External references
+
+With more than one file loaded it is possible to access slots in files 
+in other windows, and so you can link several spreadsheets together to 
+generate grand totals or create 3-dimensional models.
+
+%H2%Save
+
+After saving a file with a new name the file in memory is renamed also.
+
+%H2%Save/Restore/Swap position
+
+Save Position has been assigned to function key Shift F11.  Restore 
+position has been assigned to function key Ctrl F11.  Swap position and 
+caret has been assigned to function key F11.  This enables you to set a 
+position with Shift F11, move somewhere else and toggle between the 
+positions be pressing F11.
+
+%H2%Macro recorder
+
+PipeDream 3 has a macro recorder which enables you to build macro files 
+very easily.  The procedure is very similar to using the *Spool 
+command.  Giving the Record Macro File prompts you for the name of the 
+file for the macros to be inserted into.  Then all text that 
+you type and commands that you give, but not mouse movements, are 
+stored in the file ready for you to use with the Do Macro File command.
+
+Creating macro files in this way is much easier than typing the 
+commands in yourself.  An additional benefit is that it generates files 
+which you can load into PipeDream windows to examine, and edit if you 
+wish.
+
+One point to bear in mind if you have macro files that you have built 
+for use with PipeDream 2 is that the format has been simplified a 
+little.  Now only one command is allowed on a line in the macro file - 
+any text after the |m is treated as comment and ignored.  This enables 
+macro files to be a lot more understandable but it means that any 
+existing files that you have will do different things with PipeDream 3 
+and PipeDream 3 files that you create will not generally work with 
+PipeDream 2.
+
+%H2%Slot Protection
+
+Arbitrary blocks of slots can be protected in PipeDream 3.  The 
+protection prevents you from accidentally overwriting or deleting the 
+slot contents. Protected slots are displayed using a different 
+background colour than normal to make them stand out; this colour may 
+be changed using the Colours dialogue box.
+
+%H2%Iteration
+
+Recalculation can be made to iterate which gives the ability to 
+recalculate a set of formulae until a specified result has been 
+achieved.
+
+%H2%Pictures
+
+PipeDream 3 can display pictures that have been created by Draw, Paint 
+or other drawing applications.  These are displayed over blank slots on 
+screen and can be printed via the RISC OS printer drivers.
+
+%H2%Z88 filing system
+
+PipeDream 2 has the ability to load and save files directly to the Z88.  
+PipeDream 3 provides a Z88 filing system which makes the process rather 
+more general and fits in better with the RISC OS philosophy.  The Z88 
+Filer icon sits on the icon bar with the other filing system icons and 
+provides a device viewer and directory viewers in a similar way to the 
+drive icons.  Files can be dragged from directories in the Z88 straight 
+into PipeDream and can be saved back again in a similar way.  Files can 
+also be saved to the Z88 by dragging them from other applications.
+
+Note that the A3000 does not come with a complete serial port and needs 
+to have a simple upgrade before you will be able to plug in the Z88 or 
+a serial printer.  This upgrade should be available from your dealer.
+
+%H2%Help
+
+PipeDream supports the RISC OS help system and provides useful context 
+sensitive help, mainly of mouse operations in different areas of the 
+window.  A useful summary of mouse operations is given at the end of 
+Section 3, Chapter 1.
+
+%H2%Fonts
+
+PipeDream 3 can use all of the fonts provided with RISC OS.  New 
+facilities are provided to set the global font for a document, to 
+insert font changes within documents and to specify font sizes.  Fonts 
+are printed using the RISC OS printer drivers and cannot be printed 
+using the PipeDream printer drivers.

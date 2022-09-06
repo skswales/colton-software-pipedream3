@@ -1,0 +1,32 @@
+/* pdmain.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*
+ * Title:       pdmain.ext
+ * Author:      Stuart K. Swales 30 Jan 1989
+*/
+
+/* exported functions */
+
+extern void ABfunc(void);
+extern void act_on_c(intl c);
+extern void application_exit(int rc);
+extern int main(int argc, char *argv[]);
+
+
+/* exported variables */
+
+extern int ctrlflag;
+
+#if MS
+extern BOOLEAN autorepeat;
+extern BOOLEAN check_error;
+#endif
+
+/* end of pdmain.ext */

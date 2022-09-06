@@ -1,0 +1,112 @@
+%OP%IWC
+%OP%DP0
+%OP%MBB
+%OP%FGTrinity.Medium
+%OP%FX192
+%OP%FY192
+%CO:A,12,72%
+%C%@F:Homerton.Medium,14@%H2%The Next Sock Rack Ltd
+
+%H2%Trading account for March
+
+
+
+Sales
+Cost of sales
+
+
+
+Interest
+
+
+Expenses
+
+Wages
+Motor Expenses
+Rent
+Legal
+Bank charges
+%CO:B,6,60%%CO:C,11,36%
+
+
+
+
+%H2%   Actual
+
+%V%%R%%LC%%B%%D0%9879875
+%V%%R%%LC%%B%%D0%1987891
+=========
+%V%%R%%LC%%B%%D0%C8-C9
+
+%V%%R%%LC%%B%%D0%8567
+=========
+%V%%R%%LC%%B%%D0%C11+C13
+
+
+%V%%R%%LC%%B%%D0%129828
+%V%%R%%LC%%B%%D0%98987
+%V%%R%%LC%%B%%D0%36876
+%V%%R%%LC%%B%%D0%6267
+%V%%R%%LC%%B%%D0%676
+%CO:D,11,24%
+
+
+
+
+%H2%   Budget
+
+%V%%R%%LC%%B%%D0%2176212
+%V%%R%%LC%%B%%D0%D8/C8*C9
+=========
+%V%%R%%LC%%B%%D0%D8-D9
+
+%V%%R%%LC%%B%%D0%10298
+=========
+%V%%R%%LC%%B%%D0%D11+D13
+
+
+%V%%R%%LC%%B%%D0%130000
+%V%%R%%LC%%B%%D0%90000
+%V%%R%%LC%%B%%D0%37000
+%V%%R%%LC%%B%%D0%3000
+%V%%R%%LC%%B%%D0%0
+%CO:E,11,12%
+
+
+
+
+%H2%     +/-
+
+%V%%R%%LC%%B%%D0%C8-D8
+%V%%R%%LC%%B%%D0%C9-D9
+=========
+%V%%R%%LC%%B%%D0%C11-D11
+
+%V%%R%%LC%%B%%D0%C13-D13
+=========
+%V%%R%%LC%%B%%D0%E11+E13
+
+
+%V%%R%%LC%%B%%D0%D18-C18
+%V%%R%%LC%%B%%D0%D19-C19
+%V%%R%%LC%%B%%D0%D20-C20
+%V%%R%%LC%%B%%D0%D21-C21
+%V%%R%%LC%%B%%D0%D22-C22
+%CO:F,2,0%%CO:G,18,18%
+%H2%MD's report
+
+As you can see 
+from the trading 
+account, sales are 
+up this month by 
+@E8@@@@@@ on 
+our budget. I think 
+this represents a 
+commendable effort 
+by the sales team 
+led by Mike Bowler.
+
+We hope that our 
+new push into 
+underground stores 
+will res

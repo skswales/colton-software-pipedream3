@@ -1,0 +1,19 @@
+Fix colourtrans caret.
+
+BUG: If condition in Print dialog is 255 bytes, template will not load!
+
+draw_do_render from PD4 - use if Drawfile module. Gets JPEGs etc.
+
+RO 3.5 error dialog bits from PD4.
+
+alloc from PD4?
+
+
+Lose View / ViewSheet from PD4 now PD3 up.
+
+
+Changes
+
+Lost name / reg from About.
+
+New templates for 32-bit version; old templates for 26-bit version.

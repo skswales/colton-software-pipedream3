@@ -1,0 +1,383 @@
+%CO:A,24,72%
+%C%%H2%PipeDream 3 Help file
+
+ 
+This file gives a summary of the mouse operations available in 
+PipeDream 3.  It also gives a list of the expression operators and 
+spreadsheet functions.  It is intended as a reminder rather than an 
+exhaustive reference.  For more information refer to the PipeDream 3 
+User Guide.
+
+%C%%H2%Mouse operations
+
+Many of these mouse operations are described interactively in the RISC 
+OS !Help application when used in conjunction with PipeDream 3.
+
+%H2%Opening a Pipedream window
+
+To open a new PipeDream window, click Select on the PipeDrea3 icon on 
+the icon bar.
+
+%H2%Bringing up menus and choosing commands
+
+With the pointer in a PipeDream window, click Menu to bring up the top 
+level menu.
+
+To bring up a sub-menu, drag the pointer over the arrow to the right of 
+the menu name.
+
+To choose a command, click Select on the command name.  this carries 
+out the command and removes the menu from the screen.  If you click 
+Adjust, the menu remains on the screen.
+
+
+%H2%Loading documents
+
+To load a PipeDream document, either double-click on its icon, or drag 
+its icon onto the Pipedream icon on the icon bar.
+
+To insert a file at the caret position, drag the file's icon into the 
+window.
+
+
+%H2%Positioning the caret
+
+Click Select to position the caret in the first slot to the left which 
+can overlap the slot underneath the pointer.  
+
+Click Adjust to position the caret in the slot underneath the pointer.
+
+
+%H2%Marking blocks
+
+To mark a block within one column, drag select down the column.
+
+To mark multiple columns of text, drag Adjust across them.
+
+To mark all the rows in a range of columns, drag Select across the 
+column borders.
+
+To mark all the columns in a range of rows, drag Select down the row 
+borders.
+
+To mark all the columns in a single row, double-click Select in the row 
+border.
+
+To mark all the rows in a column, double-click Select in the column 
+border.
+
+To mark a single slot, double-click Select in the slot.
+
+To mark the whole document, double-click Select in the top left-hand 
+corner of the border.
+
+To clear any marked block, double-click Adjust in the top left-hand 
+corner of the border.
+
+To adjust a marked block after marking it, move the pointer to the 
+point at which you now want the block to end and hold down Shift whilst 
+clicking Select.  The marked block will now end where you clicked 
+Select.  The starting point will remain the same.
+
+%H2%Entering slot references into the editing line
+
+To enter a slot reference into the editing line whilst you are editing 
+an expression, click Select or Adjust in the slot.  The slot can be in 
+the current window or in another, in which case you will insert an 
+external reference.
+
+%H2%Scrolling the window
+
+Position the pointer on the scroll arrow and click Select to scroll one 
+line in the direction of the arrow.  Hold down Select to continue 
+scrolling.  Click Adjust to scroll in the other direction.  The caret 
+always remains within the PipeDream window, staying as near as possible 
+to its original position.
+
+Position the pointer on the darker part of the scroll bar (above the 
+slider to scroll up, below the slider to scroll down) and click Select.  
+The next windowful of the document will appear.  Click Adjust to scroll 
+back the other way.  The caret always remains within the PipeDream 
+window, moving, if necessary, to the point nearest to its position 
+before scrolling.
+
+%P0%
+%C%%H2%Expression operators
+
+%L%Condition operators
+
+%L%!
+%L%&
+%L%|
+%L%<
+%L%<=
+%L%<>
+%L%=
+%L%>
+%L%>=
+
+%C%%H2%Arithmetic operators
+
+%L%^
+%L%*
+%L%+
+%L%-
+%L%/
+
+%C%%H2%Spreadsheet functions
+
+%L%abs(n)
+%L%acs(n)
+%L%asn(n)
+%L%atn(n)
+%L%atn2(x,y) 
+%L%avg(list)
+%L%choose(n, list)
+%L%col
+%L%col(ref)
+%L%cos(n)
+%L%count(list) 
+%L%cterm(int, fv, pv)
+%L%date
+%L%davg(range, cond)
+%L%day(date)
+%L%dcount(range, cond)
+%L%dcounta(range, cond)
+%L%ddb(c,s,l,p)
+%L%deg(n)
+%L%dmax(range, cond)
+%L%dmin(range, cond)
+%L%dstd(range, cond)
+%L%dsum(range, cond)
+%L%dvar(range, cond)
+%L%exp(n)
+%L%fv(pmt, int, term)
+%L%hlookup(key,range,off)
+%L%if(cond, e1, e2)
+%L%index(c, r)
+%L%int(n)
+%L%irr(guess, range)
+%L%ln(n)
+%L%log(n)
+%L%lookup(key,r1,r2)
+%L%loopc
+%L%max(list)
+%L%min(list)
+%L%mod(x,y)
+%L%month(date)
+%L%monthdays(date)
+%L%npv(interest, range)
+%L%pi
+%L%pmt(pcpl,int,term)
+%L%pv(pmt,int,term)
+%L%rad(n)
+%L%rand
+%L%rate(fv,pf,term)
+%L%read(file,col,row)
+%L%round(n,p)
+%L%row
+%L%sgn(n)
+%L%sin(n)
+%L%sln(cost,salv,life)
+%L%sqr(n)
+%L%std(list)
+%L%sum(list)
+%L%syd(c,s,l,p)
+%L%tan(n)
+%L%term(pmt,int,fv)
+%L%var(list)  
+%L%vlookup(key,range,off)
+%L%write(file,col,row,exp)
+%L%year(date) 
+%CO:B,12,48%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%L%not
+%L%binary and 
+%L%binary or
+%L%less than
+%L%less than or equal
+%L%not equal
+%L%equal
+%L%greater than
+%L%greater than or equal
+
+
+
+%L%to the power of
+%L%multiply
+%L%plus
+%L%minus
+%L%divide
+
+
+
+%L%Absolute value of n
+%L%Arc cosine of n
+%L%Arc sine of n
+%L%Arc tangent of n
+%L%Arc tangent of x and y
+%L%average of values in list
+%L%nth value in list
+%L%number of column containing expression
+%L%number of column containing slot reference
+%L%cosine of n
+%L%number of numeric slots in list
+%L%number of compounding periods for investment
+%L%return the current date
+%L%average of slots in range which satisfy condition
+%L%day number of date
+%L%count of numeric slots in range which satisfy condition
+%L%count of all slots in range which satisfy condition
+%L%depreciation allowance of asset
+%L%number of degrees in n radians
+%L%maximum of slots in range which satisfy condition
+%L%minimum of slots in range which satisfy condition
+%L%standard deviation of slots in range which satisfy condition
+%L%sum of slots in range which satisfy condition
+%L%variance of slots in range which satisfy condition
+%L%e to the power of n
+%L%future value of investment
+%L%horizontal lookup of key in range with offset
+%L%if cond is true return e1 else return e2
+%L%value of slot in column c and row r
+%L%integer part of n
+%L%internal rate of return
+%L%natural log of n
+%L%base 10 log of n
+%L%lookup key in range 1; return corresponding value in range 2
+%L%current loop number in iterative process
+%L%maximum value of list
+%L%minimum value of list
+%L%x modulo y
+%L%month number of date
+%L%number of days in the month of date
+%L%net present value of future cash flow
+%L%3.1415926535898
+%L%payment on a loan
+%L%present value of series of payments
+%L%number of radians in n degrees
+%L%random number between 0 and 1
+%L%periodic interest for investment
+%L%read entry from linking file
+%L%round n to p places
+%L%number of row containing expression
+%L%sign of n
+%L%sine of n
+%L%straight line depreciation
+%L%square root of n
+%L%standard deviation of values in list
+%L%sum of values in list
+%L%sum of year's digits depreciation
+%L%tangent of n
+%L%number of payment periods of investment
+%L%variance of values in list
+%L%vertical lookup of key in range with offset
+%L%write expression to linking file
+%L%year part of date
+%CO:C,12,36%%CO:D,12,24%%CO:E,12,12%%CO:F,12,0%

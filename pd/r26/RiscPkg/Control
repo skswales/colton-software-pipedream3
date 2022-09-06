@@ -1,0 +1,15 @@
+Package: PipeDream3-26
+Section: Document
+Priority: Optional
+Licence: Free
+Maintainer: Colton Software <colton-software-pipedream@googlegroups.com>
+Standards-Version: 0.4.0
+Version: 3.10.1
+Description: Spreadsheet & Word Processor
+ PipeDream 3 offers all the facilities you would expect from the following separate programs:
+ spreadsheet, word processor and database.
+ .
+ Thanks to Richard Colton, PipeDream is now open source and completely free to use.
+Components: Apps.Document.!PipeDrea3 (Movable LookAt)
+Homepage: https://www.croftnuisk.co.uk/coltsoft/pipedream/
+Environment: arm

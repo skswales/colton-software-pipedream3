@@ -1,0 +1,154 @@
+/* file.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1990-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/************************************
+*                                   *
+* defines the external interface to *
+* the file handling module          *
+* (both stream & pathname)          *
+*                                   *
+* SKS                               *
+* February 1990                     *
+*                                   *
+************************************/
+
+#ifndef __cmodules_file_ext
+#define __cmodules_file_ext
+
+
+#ifndef RC_INVOKED /* not resource compiler */
+
+
+typedef bytep (ALIENTRY * ALIENTRY file_currentnameproc)(void);
+
+typedef enum
+{
+	file_open_read      = 0,
+	file_open_write     = 1,
+	file_open_readwrite = 2
+}
+file_openmode;
+
+
+#define FILESTRUCT struct file_struct
+
+/* abstract */
+typedef struct _file_extradata *_file_extradatap;
+
+typedef FILESTRUCT
+{
+	intl             handle;     /* system file handle */
+	intl             cnt;        /* number of bytes left in buffer */
+	char *           ptr;        /* pointer to current data item (char for loading) */
+	void *           base;       /* pointer to base of file buffer */
+	intl             bufsize;    /* how big is my buffer (default 0) */
+	intl             flags;
+	_file_extradatap extradatap; /* pointer to some more system-dependent info */
+};
+
+typedef FILESTRUCT * file_handle;
+
+
+/* exported functions */
+
+extern void    EXTERNAL file_add_cwd_to_name(char *destfilename, bytep srcfilename);
+extern intl    EXTERNAL file_add_path(char *filename /*inout*/, BOOL allow_cwd);
+extern intl    EXTERNAL file_buffer(file_handle f, intl bufsize);
+extern intl    EXTERNAL file_close(file_handle f);
+extern char *  EXTERNAL file_dirname(char *destpath, bytep srcfilename);
+extern bytep   EXTERNAL file_extension(bytep filename);
+extern intl    EXTERNAL file_flush(file_handle f);
+extern intl    EXTERNAL file_getbyte(file_handle f);
+extern BOOL    EXTERNAL file_get_cwd(char *destpath);
+extern char *  EXTERNAL file_get_prefix(char *destpath, BOOL allow_cwd);
+extern void    EXTERNAL file_init(char *appname, char *place);
+extern intl    EXTERNAL file_isrooted(bytep filename);
+extern bytep   EXTERNAL file_leafname(bytep filename);
+extern word32  EXTERNAL file_length(file_handle f);
+extern intl    EXTERNAL file_open(bytep filename, file_openmode openmode, file_handle f);
+extern intl    EXTERNAL file_putbyte(intl c, file_handle f);
+extern intl    EXTERNAL file_read(memp ptr, size_t size, size_t nmemb, file_handle f);
+extern intl    EXTERNAL file_readable(bytep filename);
+extern word32  EXTERNAL file_seek(file_handle f, word32 offset, intl origin);
+extern char *  EXTERNAL file_separatename(char *destpath, char *destfilename, bytep srcfilename);
+extern word32  EXTERNAL file_tell(file_handle f);
+extern bytep   EXTERNAL file_wild(bytep filename);
+extern intl    EXTERNAL file_write(memp ptr, size_t size, size_t nmemb, file_handle f);
+#if RISCOS
+extern char *  EXTERNAL file_get_error(void);
+#endif
+#if defined(Z88FS)
+extern intl    EXTERNAL file_looks_like_z88(bytep name);
+#endif
+extern intl    EXTERNAL file_yield(void);
+
+
+/* exported functions for sole use of macros */
+
+extern intl    EXTERNAL file__filbuf(file_handle f);
+extern intl    EXTERNAL file__flsbuf(intl c, file_handle f);
+
+
+
+/* macros */
+
+#define file_getc(f)   (--(f)->cnt >= 0 \
+							? 0xff & (*(f)->ptr++) \
+							: file__filbuf(f))
+
+#define file_putc(c,f) (--(f)->cnt >= 0 \
+							? 0xff & (*(f)->ptr++ = (char)(c)) \
+							: file__flsbuf((c), (f)))
+
+#if RISCOS
+#define MAX_FILENAME   216      /* limited by Wimp block */
+#define FILE_DEFBUFSIZ 256      /* rely on FIleSwitch buffering
+								 * and FileCore readahead for performance
+								*/
+#define FILE_ROOT_CH       ':'  /* : anywhere in RISC OS -> rooted */
+#define FILE_WILD_MULTIPLE '*'
+#define FILE_WILD_SINGLE   '#'
+
+#define FILE_DIR_SEP_CH    '.'
+#define FILE_EXT_SEP_CH    '_'  /* no real file extensions on RISC OS but _ has become conventional (6_3) */
+#elif MS || WINDOWS
+#define MAX_FILENAME   96       /* DOS filenames are pathetic */
+#define FILE_DEFBUFSIZ 1024     /* Find optimal DOS buffer someday */
+
+#define FILE_WILD_MULTIPLE '*'
+#define FILE_WILD_SINGLE   '?'
+
+#define FILE_ROOT_CH       ':'	/* : anywhere OR first is \ on DOS -> rooted */
+#define FILE_DIR_SEP_CH    '\\'
+#define FILE_EXT_SEP_CH    '.'	/* DOS has real extensions (8.3) */
+#endif
+
+
+#endif /* RC_INVOKED */
+
+
+/* errors */
+
+#define FILE_ERR_BASE             (-3000)
+
+#define FILE_ERR_CANTOPEN         (-3000)
+#define FILE_ERR_CANTCLOSE        (-3001)
+#define FILE_ERR_CANTREAD         (-3002)
+#define FILE_ERR_CANTWRITE        (-3003)
+#define FILE_ERR_STREAMUNBUFFERED (-3004)
+#define FILE_ERR_INVALIDPOSITION  (-3005)
+#define FILE_ERR_DEVICEFULL       (-3006)
+#define FILE_ERR_ACCESSDENIED     (-3007)
+#define FILE_ERR_TOOMANYFILES     (-3008)
+#define FILE_ERR_NOROOM           (-3009)
+
+
+#endif /* __cmodules_file_ext */
+
+/* end of file.ext */

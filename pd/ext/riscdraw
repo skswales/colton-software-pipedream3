@@ -1,0 +1,60 @@
+/* riscdraw.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*
+ * Title:       riscdraw.ext - exported objects from riscdraw.c
+ * Requires:
+ *  "wimplib:wimp.h"
+ * Author:      Stuart K. Swales 15-Mar-1989
+*/
+
+#ifndef __program__riscdraw_ext
+#define __program__riscdraw_ext
+
+#if RISCOS
+/* Only export object if RISCOS */
+
+
+/* exported functions */
+
+extern void at(int x, int y);
+extern void clear_graphicsarea(int x0, int y0, int x1, int y1);
+extern void clear_thisgraphicsarea(void);
+extern void clear_textarea(int x0, int y0, int x1, int y1);
+extern void clear_thistextarea(void);
+extern int  gcoord_x(int x);
+extern int  gcoord_y(int y);
+extern int  gcoord_y_textout(int y);
+extern BOOLEAN graphicsobjectintersects(int x0, int y0, int x1, int y1);
+extern BOOLEAN textobjectintersects(int x0, int y0, int x1, int y1);
+extern int roundtoceil(int a, int b);
+extern int roundtofloor(int a, int b);
+extern void setgraphicsorigin(int x, int y);
+extern void settextorigin(int x, int y);
+extern int  tcoord_x(int x);
+extern int  tcoord_y(int y);
+extern int  tcoord_x1(int x);
+extern int  tcoord_y1(int y);
+
+
+/* exported variables */
+
+extern wimp_box cliparea;
+extern BOOLEAN  paint_is_update;
+extern int      textcell_xorg;
+extern int      textcell_yorg;
+extern wimp_box thisarea;
+extern int      xorg;
+extern int      yorg;
+
+#endif
+
+#endif
+
+/* end of riscdraw.ext */

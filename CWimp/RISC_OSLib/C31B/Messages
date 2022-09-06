@@ -1,0 +1,125 @@
+# File of internal messages for RISC_OSlib. Default messages are in English
+# so you only need this file if you wish to change such messages to another
+# language (in which case use msgs_init()).
+# Some messages (txt44-txt47, txt64-txt68) are used by !Edit and are not
+# provided by the library; hence these are commented out here.
+
+alarm1:Unable to read monotonic time
+alarm2:Not enough memory to set alarm -- increase wimpslot
+dbox1:Not enough memory to create dialogue box -- increase wimpslot
+dbox2:Templates file not loaded for use with dialogue boxes
+flex1:Flex memory error
+flex2:Not enough memory, or not within *desktop world
+flex3:Flex not intialised
+heap1:Not enough memory to create heap -- free some application memory
+heap2:Heap_alloc error: %s
+heap3:Fatal internal heap error
+heap4:Heap_free error: %s
+heap5:Heap not initialised
+menu1:Not enough memory for menu (1) -- increase wimpslot
+menu2:Not enough memory for menu (2) -- increase wimpslot
+menu3:Not enough memory for menu (3) -- increase wimpslot
+resspr1:Not enough memory to load sprite file '%s' -- increase wimpslot
+resspr2:Unable to load sprite file '%s'
+saveas1:To save, drag the icon to a directory viewer
+template1:Template '%s' not found
+template2:Template load failed: %s
+template3:Not enough memory to load templates -- increase wimpslot
+template4:Cannot open file: %s
+template5:Read failed for %s
+template6:Template file not found
+template7:Not enough memory to load templates -- increase wimpslot
+template8:Template load failed
+txt1:Cannot save an Edit file into itself
+txt2:Could not save file '%s'
+txt3:Not enough room for imported data
+txt4:Not enough space (or too many windows)
+txt5:Too many windows
+txt6:1 file edited but not saved in Edit: are you sure you want to Quit?
+txt7:%i files edited but not saved in Edit: are you sure you want to Quit?
+txt8:Do you want to save edited file '%s'?
+txt9:Do you want to save your edited file?
+txt10:Edit
+txt11:Misc,>Save    F3,Select,Edit,Display
+txt12:Misc
+txt13:>Info,>File,New view,Column tab ‹F3,Overwrite  ‹F1,Wordwrap   ^F5
+txt14:Select
+txt15:>Save,Copy   ^C,Move   ^V,Delete ^X,Clear  ^Z,>Indent
+txt16:Edit
+txt17:>Find     F4,>Goto     F5,Undo     F8,Redo     F9,CR<->LF,Expand tabs,Format text
+txt18:Format width
+txt19:Click SELECT to set the caret.
+txt20:Drag SELECT to set a selection.
+txt21:Click/Drag ADJUST to adjust the selection.
+txt22:Click ADJUST to set a selection.
+txt23: ColTab
+txt24: Overwrite
+txt25: Wordwrap
+txt26:TextFile
+txt27:DataFile
+txt28:ExecFile
+txt29:ObeyFile
+txt30:EditFile
+txt31:Counting...
+txt32:%i Found
+txt33:Searching...
+txt34:Not Found
+txt35:Found
+txt36:Replace ?
+txt37:Last Replace ?
+txt38:%i replaced
+txt39:Nothing to Undo
+txt40:Undone
+txt41:Redone
+txt42:Nothing to redo
+txt43:'%s' not found, or is not a file.
+#txt44:Cannot allocate buffers
+#txt45:Task window
+#txt46:Task
+#txt47:Kill,Reconnect,Suspend,Resume,Unlink,Link,TaskInput,Ignore Ctl,Edit
+txt48:Not enough space
+txt49:fatal internal error 1
+txt50:fatal internal error 2
+txt51:File '%s' not found
+txt52:Fatal startup error: too many fonts
+txt53:Fonts
+txt54:System Font
+txt55:Colour
+txt56:Font size
+txt57:8,10,12,14,20,morethan12chars
+txt58:Font height
+txt59:8,10,12,14,20,morethan12chars
+txt60:Line spacing
+txt61:Left margin
+txt62:Display
+txt63:Font,Font size,Font height,Line spacing,Margin,Invert,Wrap,Foreground,Background
+#txt64:Edit
+#txt65:>Info,Create,Quit
+#txt66:Create
+#txt67:New Text file,New Data file,New Command file, New Obey file,New Task window
+#txt68:This is the Edit icon.|MClick SELECT to create a new Text window.
+wimpt1:%s has suffered a fatal internal error (type=%i) and must exit immediately
+wimpt2:%s has suffered a fatal internal error (%s) and must exit immediately
+wimpt3:Not enough memory for active windows -- increase wimpslot
+win1:Too many windows
+win2:Not enough memory to change window title -- increase wimpslot
+xferrecv1:Can't transfer file (use *Set Wimp$Scrap <filename>)
+xferrecv2:Data transfer failed
+xfersend1:Bad data transfer, receiver dead
+xfersend2:Selection
+FNTSELI00:Click here to apply the above data to the selected substyles
+FNTSELI01:Click here to go back to the last applied or chosen values
+FNTSELI15:Click SELECT here to increase the height of the font.|MClick ADJUST to decrease the height of the font.|MShift-click to change the width at the same time.
+FNTSELI16:Click SELECT here to increase the width of the font.|MClick ADJUST to decrease the width of the font.|MShift-click to change the height at the same time.
+FNTSELI19:Click SELECT here to decrease the height of the font.|MClick ADJUST to increase the height of the font.|MShift-click to change the width at the same time.
+FNTSELI20:Click SELECT here to decrease the width of the font.|MClick ADJUST to increase the width of the font.|MShift-click to change the height at the same time.
+FNTSELI17:Type into this icon the height that you want the font in.|M
+FNTSELI18:Type into this icon the width that you want the font in.|M
+FNTSELI21:Type into this icon a sample string to see your font choice.|MPress 'TRY' to reflect the font choice in this window.|M
+FNTSELI22:Click here to reflect the font, width and height choices in the sample text window.|M
+FNTSELIZZ:This is the font selector window
+FNTSELPNT:Click here to set the height and the width to %d point.
+FNTSELW0:Click here to choose '%s' as the typeface.
+FNTSELW1:Click here to choose '%s' as the weight.
+FNTSELW2:Click here to choose '%s' as the style.
+

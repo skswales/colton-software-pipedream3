@@ -1,0 +1,26 @@
+/* version.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*
+ * Title:       version.ext - exported objects from version.c
+ * Author:      Stuart K. Swales 25 Jan 1989
+*/
+
+#ifndef __pd__version_ext
+#define __pd__version_ext
+
+/* exported variables */
+
+extern const char applicationname[];
+extern const char applicationversion[];
+extern const char nameandversionstring[];
+
+#endif
+
+/* end of version.ext */

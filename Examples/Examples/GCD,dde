@@ -1,0 +1,17 @@
+%OP%DP0
+%OP%RIY
+%OP%RN0
+%CO:A,12,72%%L%GCD
+
+%V%%R%100
+
+
+%V%%R%if(loopc=1,A3,if(A6=B6,A6,if(A6>B6,A6-B6,A6)))
+%CO:B,12,60%
+
+%V%%R%10
+
+
+%V%%R%if(loopc=1,B3,if(A6=B6,B6,if(B6>A6,B6-A6,B6)))
+%V%%R%if(A6=B6,B7,loopc)
+%CO:C,12,48%%CO:D,12,36%%CO:E,12,24%%CO:F,12,12%

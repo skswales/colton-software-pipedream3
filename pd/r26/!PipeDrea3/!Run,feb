@@ -1,0 +1,62 @@
+|
+| Run file for PipeDream 3.10 (10-Apr-90) (26-bit)
+|
+Set PipeDrea3$Dir <Obey$Dir>
+|
+Set PipeDrea3$Help <PipeDrea3$Dir>.!Help
+Set PipeDrea3$Version 3.10
+Set PipeDrea3$Web http://croftnuisk.co.uk/coltsoft/pipedream/
+Set PipeDrea3$Title PipeDream 3
+Set PipeDrea3$Description Integrated spreadsheet and word processor
+Set PipeDrea3$Publisher Colton Software
+|
+IconSprites <PipeDrea3$Dir>.!Sprites
+|
+| Leave file type sprites alone unless PipeDream 4 hasn't been seen
+If "<PipeDream$Dir>"="" Then IconSprites <PipeDrea3$Dir>.!SpritesF3
+|
+Set File$Type_DDE PDream
+SetMacro Alias$@RunType_DDE   Run <PipeDrea3$Dir>.!Run %%*0
+SetMacro Alias$@PrintType_DDE Run <PipeDrea3$Dir>.!Run -Print %%*0
+|
+Set File$Type_D21 PDCmdFil
+SetMacro Alias$@RunType_D21   Run <PipeDrea3$Dir>.!Run -Macro %%*0
+|
+If "<File$Type_DFE>"="" Then Set File$Type_DFE CSV
+|
+RMEnsure UtilityModule 2.00 Error 0 PipeDream 3 (26-bit) needs RISC OS 2.00 or later
+|
+| Ensure we have the Shared C Library and determine its vintage
+| NB Don't load a newer version over an older one that may be in RAM
+| Also note that PipeDream 3 (26-bit) needs Aemulor support if running on a new system
+|
+Set PipeDrea3$CLibLoaded 1
+RMEnsure UtilityModule 5.00 Set PipeDrea3$CLibLoaded 0
+If PipeDrea3$CLibLoaded=1 Then RMEnsure Aemulor 2.52 Error 0 PipeDream 3 (26-bit) needs SharedCLibrary with APCS-R support - please consider running Aemulor.
+|
+Set PipeDrea3$CLibLoaded 1
+RMEnsure SharedCLibrary 0.00 Set PipeDrea3$CLibLoaded 0
+If PipeDrea3$CLibLoaded=0 Then If "<System$Path>" = "" Then Error 0 System resources cannot be found
+If PipeDrea3$CLibLoaded=1 Then RMEnsure SharedCLibrary 3.66 Error 0 PipeDream 3 (26-bit) needs SharedCLibrary 3.66 or later but an earlier version is already running.
+Unset PipeDrea3$CLibLoaded
+|
+RMEnsure SharedCLibrary 3.66 RMLoad System:Modules.CLib
+RMEnsure SharedCLibrary 3.66 Error 0 PipeDream 3 (26-bit) needs SharedCLibrary 3.66 or later.
+|
+RMEnsure ColourTrans 0.51 RMLoad System:Modules.Colours
+RMEnsure ColourTrans 0.51 Error 0 PipeDream 3 (26-bit) needs ColourTrans 0.52 or later.
+|
+RMEnsure FPEmulator 2.70 RMLoad System:Modules.FPEmulator
+RMEnsure FPEmulator 2.70 Error 0 PipeDream 3 (26-bit) needs FPEmulator 2.70 or later.
+|
+If "<PipeDrea3$Path>" = "" Then Obey <PipeDrea3$Dir>.!Path
+|
+| The higher value is specified as the minimum first so that
+| there is sufficient memory to get PipeDream 3 fully running
+WimpSlot -min 480k
+| The lower value is specified as the maximum last so that
+| becomes the initial slot that PipeDream 3 is started with
+| NB RISC OS 2 requires the -min parameter to be specified
+WimpSlot -min 416k -max 416k
+|
+Run <PipeDrea3$Dir>.!RunImage %*0

@@ -1,0 +1,52 @@
+/* z88com.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1988-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/**********************************
+*                                 *
+* external definitions for Z88com *
+*                                 *
+* MRJC                            *
+* March 1988                      *
+*                                 *
+**********************************/
+
+extern intl z88_close(void);
+extern intl z88_fclose(void);
+extern char *z88_findfirst(char *, char);
+extern char *z88_findnext(void);
+extern intl z88_fopen(char *, char *);
+extern intl z88_getbyte(void);
+extern intl z88_geterr(void);
+extern intl z88_open(intl);
+extern intl z88_putbyte(intl);
+
+/*
+classes of name for findfirst()
+*/
+
+#define Z88_DEVS 0
+#define Z88_DIRS 1
+#define Z88_FILES 2
+
+/*
+error definition
+*/
+
+#define Z88_ERR_BASE -3000
+
+#define Z88_ERR_EOF     Z88_ERR_BASE - 0
+#define Z88_ERR_BADCOM  Z88_ERR_BASE - 1
+#define Z88_ERR_INIT    Z88_ERR_BASE - 2
+#define Z88_ERR_MEM     Z88_ERR_BASE - 3
+#define Z88_ERR_TOOMANY Z88_ERR_BASE - 4
+#define Z88_ERR_ARG     Z88_ERR_BASE - 5
+#define Z88_ERR_OPEN    Z88_ERR_BASE - 6
+#define Z88_ERR_Z_NSP   Z88_ERR_BASE - 7
+
+/* end of z88com.ext */

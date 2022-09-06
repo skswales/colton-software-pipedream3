@@ -1,0 +1,39 @@
+| MakeRiscPkg for PipeDream 3
+|
+| This Source Code Form is subject to the terms of the Mozilla Public
+| License, v. 2.0. If a copy of the MPL was not distributed with this
+| file, You can obtain one at https://mozilla.org/MPL/2.0/.
+|
+| Copyright (C) 1991-1998 Colton Software Limited
+| Copyright (C) 1998-2015 R W Colton
+
+Set pd$Release 3_10_1
+| the master list is in version.c
+
+Set pd$Disc                                $.Temp.PD3.RiscPkg.PipeDream3_<pd$Release>
+IfThere $.Temp             Then Else %CDir $.Temp
+IfThere $.Temp.PD3         Then Else %CDir $.Temp.PD3
+IfThere $.Temp.PD3.RiscPkg Then Else %CDir $.Temp.PD3.RiscPkg
+X %Wipe <pd$Disc> ~cfr~v
+
+Set pd$Zip  <pd$Disc>/zip
+%Remove <pd$Zip>
+
+Obey <Obey$Dir>.CopyToTemp
+
+| Complete top level by adding RiscPkg
+%CDir                                                       <pd$Disc>.RiscPkg
+%Copy <Obey$Dir>.RiscPkg.Control                            <pd$Disc>.RiscPkg.* ~rf~cln~v
+%Copy <Obey$Dir>.RiscPkg.Copyright                          <pd$Disc>.RiscPkg.* ~rf~cln~v
+| Omit           RiscPkg.LICENCE
+
+
+%Dir <pd$Disc>
+zip -r <pd$Zip> RiscPkg Apps
+SetType <pd$Zip> &A91
+Info <pd$Zip>
+Unset <pd$Zip>
+%Back
+
+Filer_OpenDir <pd$Disc>
+Unset <pd$Disc>

@@ -1,0 +1,96 @@
+REM >TempltJoin
+REM Minimalist template file joining program
+REM REALLY quickly hacked together
+REM Courtesy of Charles Ferguson, Sept 2022
+
+ON ERROR ERROR EXT ERR, REPORT$+" at line "+STR$ERL
+
+DIM temp% 24
+
+max_templates%=256
+DIM template_data%(max_templates%)
+DIM template_datalen%(max_templates%)
+DIM template_name$(max_templates%)
+used_templates% = 0
+
+PROCload_template_file("tem_main")
+PROCload_template_file("tem_bc")
+PROCload_template_file("tem_el")
+PROCload_template_file("tem_f")
+PROCload_template_file("tem_p")
+PROCload_template_file("tem_s")
+
+PROCsave_template_file("tem_out")
+END
+:
+:
+DEF PROCload_template_file(filename$)
+SYS "OS_File", 5, filename$ TO r0%,,,,len%
+IF r0% <> 1 THEN SYS "OS_File", 19, filename$, r0%
+DIM buf% len%
+SYS "OS_File", 255, filename$, buf%
+IF buf%!0 <> -1 THEN ERROR 0, "Template files shouldn't have font data in"
+:
+REM Skip Header
+p%=buf% + 16
+:
+REM Each template block
+WHILE !p% <> 0
+    name$=""
+    data%=buf%+p%!0
+    size%=p%!4
+    IF p%!8 <> 1 THEN ERROR 0, "Template contains non-window? Maybe this should be silently ignored"
+    x%=p%+12
+    FOR I = 0 TO 11
+        IF x%?I <= 32 THEN I=12 ELSE name$+=CHR$(x%?I): REM CtrlChar terminates
+    NEXT
+    PROCadd_template(data%, size%, name$)
+    p% += 24
+ENDWHILE
+ENDPROC
+:
+:
+DEF PROCadd_template(data%, size%, name$)
+template_data%(used_templates%) = data%
+template_datalen%(used_templates%) = size%
+template_name$(used_templates%) = name$
+used_templates% += 1
+ENDPROC
+:
+:
+DEF PROCsave_template_file(filename$)
+o%=OPENOUT(filename$)
+IF o%=0 THEN ERROR 0, "Nope, file didn't write"
+
+REM Header
+temp%!0 = -1
+temp%!4 = 0
+temp%!8 = 0
+temp%!12 = 0
+SYS "OS_GBPB", 2, o%, temp%, 16
+
+dataptr% = 16 + 24 * used_templates% + 4
+
+REM Index entries
+FOR I = 0 TO used_templates%-1
+    temp%!0 = dataptr%
+    temp%!4 = template_datalen%(I)
+    temp%!8 = 1
+    $(temp%+12) = template_name$(I): REM CtrlChar terminates
+    SYS "OS_GBPB", 2, o%, temp%, 24
+    dataptr% += template_datalen%(I)
+NEXT
+
+REM Index terminator
+temp%!0=0
+SYS "OS_GBPB", 2, o%, temp%, 4
+
+REM Each template block
+FOR I = 0 TO used_templates%-1
+    SYS "OS_GBPB", 2, o%, template_data%(I), template_datalen%(I)
+NEXT
+CLOSE#o%
+SYS "OS_File", 18, filename$, &FEC
+ENDPROC
+:
+REM End of TempltJoin

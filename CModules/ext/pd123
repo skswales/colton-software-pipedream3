@@ -1,0 +1,59 @@
+/* pd123.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1988-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*****************************************************
+*                                                    *
+* external header file for PipeDream/Lotus converter *
+* MRJC                                               *
+* March 1988                                         *
+*                                                    *
+*****************************************************/
+
+/* flag for other modules */
+#define LOTUSREAD
+
+/************************************************************************
+*                                                                       *
+* code selection                                                        *
+*                                                                       *
+* UTIL_LTP creates stand-alone utility for Lotus to PipeDream           *
+* UTIL_PTL creates stand-alone utility for PipeDream to Lotus           *
+* INT_LPTPL creates internal code for converter using function lp_lptpl *
+*                                                                       *
+************************************************************************/
+
+/* #define UTIL_PTL */
+/* #define UTIL_LTP */
+#define INT_LPTPL
+
+/*
+types of PipeDream
+*/
+
+#define PD_VP 1
+#define PD_Z88 2
+#define PD_PC 3
+#define PD_ARCH 4
+#define PD_3 5
+
+/* function declarations */
+/* error = readlotus(filein, fileout, PD_type, counter routine) */
+extern intl readlotus(FILE *, FILE *, intl, intl (*)(word32));
+/* error = writelotus(filein, fileout, PD_type, counter routine) */
+extern intl writelotus(FILE *, FILE *, intl, intl (*)(word32));
+
+/* error definition */
+#define PD123_ERR_BASE -4000
+#define PD123_ERR_FILE    PD123_ERR_BASE - 0
+#define PD123_ERR_MEM     PD123_ERR_BASE - 1
+#define PD123_ERR_EXP     PD123_ERR_BASE - 2
+#define PD123_ERR_BADFILE PD123_ERR_BASE - 3
+#define PD123_ERR_BIGFILE PD123_ERR_BASE - 4
+
+/* end of pd123.ext */

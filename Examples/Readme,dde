@@ -1,0 +1,1115 @@
+%OP%DFT
+%OP%TPK
+%OP%TM4
+%OP%FM1
+%OP%BM1
+%OP%LM4
+%CO:A,8,72%
+%C%%H2%PipeDream 3 for RISC OS
+
+%C%© Colton Software, 1989,1990,2022
+
+
+Filename: 
+%L%Last updated:
+
+
+%H2%General
+
+This file provides additional information to that in the PipeDream 3 
+User Guide.  Topics covered are:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%H2%1. Acorn licence
+
+The program !Chars and the modules Clib (the Shared C Library) and 
+FPEmulator are owned by and have been provided by Acorn Computers Ltd 
+for your use with PipeDream 3.  We would remind you that their use is 
+subject to the conditions of the standard Acorn End User Licence 
+Agreement as well as the conditions of the PipeDream licence agreement.  
+Copies of this are provided with the Archimedes computer and RISC OS or 
+can be obtained directly from Acorn.
+
+We would like to thank Acorn for its help and cooperation in providing 
+these materials for your use.
+
+
+%H2%2. Fonts
+
+The PipeDream 3 User Guide implies that specifying fonts within your 
+text only has effect on the printer and has no effect on the screen.  
+This is not the case.  Fonts are also displayed on the screen. 
+
+To be able to display or print characters in fonts other than the 
+system font (the system font is the one used in the title bar of every 
+window) the Archimedes needs to have information about the shapes of 
+all the letters.  This information is supplied on disc and is read from 
+disc when needed.  The directory !Fonts on Applications Disc 1 contains 
+some fonts and others may become available from Acorn or other sources.  
+
+To speed up the operation of drawing fonts, RISC OS reduces the number 
+of disc accesses by keeping as much font information in memory as it 
+can.  The area of memory used for storing fonts is called the font 
+cache and you can vary the amount of memory available for the font 
+cache in the Task display accessible from the Archimedes 'A' icon bar 
+menu.  The memory that you allocate to the font cache becomes 
+unavailable to the rest of the system so it is best to keep it small.  
+However, if you find that fonts take ages to display because they are 
+continually being read from disk you will need to give the font cache a 
+little more memory.
+
+In order to show RISC OS where to find the directory !Fonts it is 
+necessary to catalogue the disc or directory which contains it.  Then, 
+whenever RISC OS needs to read more font information, it will 
+automatically read it from that disc.
+
+The file Readme_f in this directory contains a copy of this document 
+formatted in the font Trinity.Medium. Try loading that file into a 
+window to compare the text with that in the system font.  If you have a 
+dot matrix or laser printer and a suitable RISC OS printer driver, you 
+can try printing Readme_f .  You may find that to obtain a reasonable 
+speed in the display of fonts you need to allocate a lot of memory to 
+the font cache and that to print at a reasonable speed on a dot matrix 
+printer you need to allocate a lot of memory to the Module area. 
+Printing with RISC OS drivers works best when using version 1.12, or 
+later, of the RISC OS printer drivers which should be available from 
+your Acorn dealer.  These drivers do not require you to allocate memory 
+to the Module area before printing; they will use whatever memory is 
+free in the computer.
+
+
+%H2%3. Graphics
+
+Pictures (in the form of !Draw files) and images (in the form of 
+sprites) can be included in PipeDream documents and displayed on the 
+screen and printed.  To include a picture, position the caret in a 
+blank slot at the top-left of where you would like the picture and then 
+drag the picture file from the disc directory into the PipeDream 
+window.  The picture should then be drawn in the window.
+
+Once inside the PipeDream window the picture can be rescaled.  The 
+picture is represented in the PipeDream document as a filename, like 
+this
+
+@@ G:filename@
+
+(Note that you should use only a single @@ at the start, a double @@ is 
+used in the above slot to display the filename.) 
+
+To rescale the picture insert the scale factor after the filename like 
+this
+
+@@ G:filename,70@
+
+This would rescale the picture to 70%PC% of its original size.  To delete 
+the picture, move the caret onto the slot containing the reference and 
+delete the reference.  To move the picture, delete the reference and 
+paste it into another slot.
+
+
+%H2%5. Highlights in headers and footers
+
+Highlights can be inserted into headers and footers (and the title) by 
+inserting ^n where n is the highlight number (similar to search and 
+replace).  For example ^4 would switch on italics.
+
+
+%H2%6. Loading multi-file documents
+
+The description given on page 211 of the PipeDream 3 User Guide on 
+loading multi-file documents is incorrect.  Sorry!
+
+To load a multi-file document drag the list file's icon to the 
+PipeDream icon on the icon bar.  This loads the first file of the 
+multi-file document into a window. 
+
+To load the list file itself for editing click Select on the PipeDream 
+icon on the icon bar to open a new empty window and then drag the list 
+file's icon into the new empty window.
+
+
+%H2%7. Macro files
+
+The sample macro file given on page 325 of the PipeDream 3 User Guide 
+is incorrect.  It should read
+
+\Cdk|i 35 |i "¢" |m                         
+\Cdf|i "F1" |i "\R|m" |m                    
+\Cdf|i "Shift F2" |i "\CGS |i C3 |m" |m     
+\Cdf|i "Ctrl F3" |i "\Q|m\Z|m" |m           
+\Cdf|i "Ctrl-Shift F1" |i "\FH|m" |m        
+
+Note the different way in which the function keys are specified.  It is 
+always easiest to generate macro files using the Record Macro File 
+command (Ctrl-FY) which is on the long cursor menu.  Also if you need 
+to know the syntax of macro files precisely, use the macro recorder and 
+then load the resulting macro file by dragging it to the PipeDream icon 
+on the icon bar.
+
+
+%H2%8. Printing formulae
+
+If you want to print your spreadsheet with the formulae showing rather 
+than the resulting values first convert the slots from numeric slots to 
+textual slots by using the Number <> Text command (Ctrl-ENT) which is 
+available on the long Blocks menu.  After printing you will probably 
+want to convert back to numeric slots by using Ctrl-ENT again.
+
+
+%H2%9. Z88 Filing System
+
+The Z88 Filing System provided on the PipeDream 3 disc enables you to 
+connect a Z88 computer to the Archimedes and load files from it and 
+save files to it as if it were a disc drive.  In order to do this two 
+extra pieces of hardware are required - a Z88-Archimedes lead and the 
+PC-LINK EPROM card plugged into the Z88.  Both of these components are 
+available separately from Colton Software.
+
+To use the Z88 filing system, double-click Select on the Z88 icon on 
+the PipeDream 3 disc.  The Z88 Filing System will load and install its 
+icon on the icon bar.  Ensure that the lead is connected securely to 
+both computers and that the PC-LINK EPROM card is inserted and running 
+in the Z88. Now click Select on the Z88 icon on the icon bar.  A 
+directory viewer should appear showing the devices available on the 
+Z88.  Click Select on one of the devices and a directory viewer will 
+appear showing the files and directories currently in the device.  
+
+If you receive the message "Failed to synchronise with the Z88 (Is 
+PC-LINK running on the Z88?)" check that the lead is connected securely 
+in both computers, and that the PC-LINK EPROM is correctly inserted and 
+running in the Z88.  (To start PC-LINK press []L (square L) on the 
+Z88.)
+
+With the Z88 Filing System running you can copy files between a 
+directory on an Archimedes disk and a directory in the Z88.  You can 
+create selections in directories on both the Z88 and Archimedes and 
+copy the selections.  You can also copy files from the Z88 to PipeDream 
+3 running on the Archimedes either by dragging the file to the 
+PipeDream 3 icon on the icon bar to load the file, or by dragging the 
+file into a PipeDream window to insert it into another document.  
+Similarly you can save a file from PipeDream 3 to the Z88 by dragging 
+the file icon from the Save dialog box to the Z88 directory viewer.
+
+You can also drag files from the Z88 to other, but not all, 
+applications.  For example you can load files from the Z88 straight 
+into Edit by dragging files in a similar way to that described above 
+for PipeDream 3.  Some applications will not be able to load or save 
+Z88 files directly and the data will be corrupted when it is displayed 
+in the application's window.  Of course, you can copy the file into a 
+directory on an Archimedes disc first, and then load it into the 
+application.  (For the technically minded, this is because the PC-LINK 
+EPROM does not support random access, just sequential access.)
+
+Not all of the filing system operations are supported by the Z88 Filing 
+System.  You cannot use the Access, Delete or Rename commands on the 
+Filer Selection sub-menu to operate on Z88 files.  Neither can you 
+create directories on the Z88 from the Archimedes; you must do this on 
+the Z88 itself, using its own Filing System.
+
+
+%H2%10. Printer Drivers
+
+Three PipeDream printer drivers are provided.  These are %H2%fx80%H2% for Epson 
+compatible dot matrix printers, %H2%juki%H2% for daisywheel printers, and %H2%HPjet%H2% 
+for Hewlett-Packard Laserjet and compatible printers.  They are in 
+directory !PipeDrea3 (which you can open by pressing Shift whilst 
+double-clicking on !PipeDrea3).
+
+These drivers are for PipeDream type printing only.  For RISC OS type 
+printing use the appropriate driver available from the Application disc 
+or RISC OS Extras disc.
+
+
+%L%%H2%11. Printing with RISC OS printer drivers from 1Mbyte computers
+
+A number of people have asked how to print using the "fancy fonts" and 
+the RISC OS printer drivers on dot matrix printers from an Archimedes 
+having only 1Mbyte of memory.  
+
+The general problem is that optimal use of RISC OS requires more than 
+1Mbyte of RAM.  This is true not just for usage of PipeDream but also 
+true for usage of most other Archimedes applications.  1Mbyte is 
+generally sufficient for a single application to run but expectations 
+constantly rise about fonts, screen and printer resolutions and 
+document sizes, and it also desirable to have several applications 
+running together now that applications are starting to communicate 
+between themselves intelligently.  Currently 2Mbytes is fine for most 
+users, enabling several applications to be run concurrently, with many 
+documents loaded, and generous caches for fonts and printer drivers and 
+so on.  Given past trends it may be expected that some time in the 
+future 2Mbytes will seem cramped and 4Mbytes or even more will become 
+the norm.  Decisions about upgrading are subjective and depend upon 
+need and finance but, at present, much more can be done in 2Mbytes than 
+1Mbyte.  After loading PipeDream 3 you can expect 250K free on a 1Mbyte 
+computer or 1,250K free on a 2Mbyte computer.  Note that memory for a 
+font cache and a RISC OS printer driver has to be allocated from this 
+area.  Remember that using the system font on screen and PipeDream 
+printer drivers  to print does not require any font cache or extra 
+memory for a printer driver.
+
+We recommend you use PrinterDM 1.12, or later, which is available on 
+the RISC OS Extras Disc and FontManager 2.42, or later, together with 
+the outline fonts which are available on the Acorn Fonts disc or from 
+Acorn Desktop Publisher.  All of these should be available from your 
+Acorn dealer.
+
+The key to printing with RISC OS drivers is to have memory free for the 
+driver to use as a buffer.  The more memory the faster the print.
+
+A reasonable configuration for your computer is as follows.  Perform
+
+
+
+
+
+and then do a Ctrl-Reset.  Your memory allocation in the task display 
+should now be  approximately:
+
+
+
+
+
+
+
+Next, catalogue the disc containing !Fonts and then load PipeDream onto 
+the icon bar.  Version 3.07 of PipeDream requires 432K and there should 
+now be about 160K free.  Load PrinterDM onto the icon bar, select the 
+appropriate printer type and then select Quit on PrinterDM's menu.  
+There should now be about 128K free.  Load/create your document and 
+print.
+
+Extra memory can be recovered by unplugging the Percussion, Stringlib, 
+Wavesynth,  SoundChannels and SoundDMA modules which yields about 24K.  
+Printing in modes 0 or 1 will free a further 56K for the driver buffer.  
+Printing sprites is best done in mode 1.
+
+
+%H2%12. New features in PipeDream 3.07
+
+%H1%Print scaling%H1%  A new option in the print dialog box enables you to 
+specify the size of print to be used.  Note that this only works with 
+the RISC OS printer drivers.
+
+%H1%Grid printing%H1%  The grid can now be printed.  The print is not quite as 
+slick as the screen display as vertical lines are drawn through 
+overlapping text.  However printing numerical documents with the grid 
+can make a vast difference to the presentation.
+
+%H1%Editing in fonts%H1%  If you have a printer font selected the current line 
+is also now displayed on the screen in that font.  If you find that 
+your monitor is not of a sufficiently high resolution for the editing 
+to be readable use the system font for editing and switch to your 
+favoured font before printing.
+
+%H1%Caret colour%H1%  The colour of the caret can now be changed in the colours 
+dialog box.
+
+%H1%Saving%H1%  Clicking Select on Save in the Files menu will now cause 
+PipeDream to save the file without prompting with a dialog box if it 
+can.  If the filename is ambiguous (ie there is no directory path) 
+PipeDream will put up a dialog box in the usual way.  This is a feature 
+of RISC OS and gives you the option of repeated saving with or without 
+changing the filename and with a minimum of mouse operations.  (On 
+other systems these are known as "Save..." and "Save as...".
+
+%H1%Define command  (Ctrl CDC)%H1%
+
+Define Command enables you to redefine the Ctrl key sequences.  For 
+example if you wanted Ctrl-C to perform a Copy Block command you would 
+specify
+
+ Command to define:  C
+ Define as:          BC
+
+Think carefully before redefining the Ctrl sequences in this way.  
+Remember that PipeDream uses the letters F E L P B C and S as the first 
+character of multiple commands and so if you redefine any of these you 
+will be affecting a lot of commands.
+
+
+%H2%13. New features in PipeDream 3.10
+
+%H1%Border colour%H1%  The current row and column borders can be drawn in a 
+different colour to help the eye find the current slot more easily.  
+This colour can be set in the colours dialog box.
+
+%H1%Overlaying pictures%H1%  Graphics files in Draw format can now be overlaid 
+by text in PipeDream.  An example of this is Whatif which is provided 
+in the examples.  In this example boxes have been created in !Draw and 
+these are used to highlight slots in PipeDream.  This feature is very 
+good for creating form templates.
+
+%H1%Slot references%H1%  Slot references can now be put into header and footer 
+fields.  (Highlights can also be used in headers, footers, searching 
+and leading and trailing character fields; use ^1 to ^8 to specify 
+highlight 1 to highlight 8.) 
+
+%H2%14. New features in PipeDream 3.12
+
+%H1%International Spelling Checker%H1% The spelling checker can now cope with 
+characters other than A-Z, hyphen and apostrophe.  The list of 
+characters, sorting sequences and endings is given in a file in 
+!PipeDrea3.Dictdefn.  There is one file for each type of dictionary.  
+We recommend that you do not try to modify these files and support may 
+not be given for problems that occur if you do.
+
+When creating a user dictionary there is a new option in the Create 
+User Dictionary dialog box for you to specify a type of dictionary.  
+This is taken from the files in Dictdefn.  Normally you would just 
+leave it set to English.
+
+A new command (User Dictionary Options - Ctrl-SQ) has been added to 
+enable you to make user dictionaries read-only.  This prevents you 
+adding new words to the dictionary.  It is of most use to Econet users 
+who can now have read-only user dictionaries accessable by multiple 
+users.
+
+%H1%DTP Export
+
+A new DTP Export has been written and can be accessed from the Save 
+dialog box.  The old DTP Export has been renamed as FWP export.  The 
+new exporter exports paragraphs and tabular data more appropriately
+for Acorn DTP than before as Acorn DTP does not cope very well with 
+paragraphs and tabular data in First Word Plus files.
+
+%H2%15. Known problem with printing
+
+PipeDream is unable to correctly print multi-file documents with 
+many RISC OS printer drivers.  PrinterPS works ok, as do the newer
+versions (1.12 upwards) of PrinterDM and LJ if enough memory is 
+available for a full page buffer.
+%CO:B,8,64%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 1. Acorn licence
+ 2. Fonts
+ 3. Graphics
+ 4. 
+ 5. Highlights in headers and footers
+ 6. Loading multi-file documents
+ 7. Macro files
+ 8. Printing formulae
+ 9. Z88 Filing System
+ 10. Printer Drivers
+ 11. Printing with RISC OS printer drivers from 1Mbyte computers
+ 12. New features in PipeDream 3.07
+ 13. New features in PipeDream 3.10
+ 14. New features in PipeDream 3.12
+ 15. Known problem with printing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*configure spritesize 0
+*configure fontcache 48K
+*unplug SoundScheduler
+
+
+
+
+Next+Free
+Screen memory
+System heap
+Module area
+Font cache
+%CO:C,8,56%
+
+
+
+
+
+%L%$.Documents.Readme
+6 September 1990
+%CO:D,8,48%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%V%%R%%TC%%D0%720
+%V%%R%%TC%%D0%80
+%V%%R%%TC%%D0%16
+%V%%R%%TC%%D0%96
+%V%%R%%TC%%D0%48
+%CO:E,8,40%%CO:F,8,32%%CO:G,8,24%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Define key
+ Define function key
+ Define function key
+ Define function key
+ Define function key
+%CO:H,8,16%%CO:I,8,8%

@@ -1,0 +1,85 @@
+%OP%IWC
+%OP%JUY
+%OP%DP0
+%OP%TH1
+%OP%FGTrinity.Medium
+%OP%FX192
+%OP%FY192
+%OP%FS12000
+%CO:A,1,72%%C%@F:Homerton.Medium,14@%H2%Car Lovers Annual Report on Company Fleet
+%CO:B,19,18%
+
+
+Porsche Carrera RSL
+AC Cobra 289 Mk II
+Jaguar D type
+Ferrari 250 SWB
+Ferrari 308 GTB
+
+@F:Trinity.Medium,14@%H2%Comment
+
+%JR%As you can see from 
+%JL%the graph on the right 
+%JR%hand side, the %H4%Car 
+%JL%%H4%Lovers%H4% investment in 
+%JR%superb classic cars has 
+%JL%performed outstand- 
+%JR%ingly, outstripping 
+%JL%most conventional 
+forms of investment.
+
+%JR%The outlook remains 
+%JL%rosy, with more 
+%JR%investment funds 
+%JL%flowing onto the 
+market.
+%CO:C,9,53%
+%R%Value
+%R%year ago
+%V%%R%%LC%50000
+%V%%R%%LC%90000
+%V%%R%%LC%375000
+%V%%R%%LC%500000
+%V%%R%%LC%35000
+
+@G:AdSSDraw,60@
+%CO:D,10,0%
+%R%Value
+%R%now
+%V%%R%%LC%%D0%150000
+%V%%R%%LC%%D0%150000
+%V%%R%%LC%%D0%950000
+%V%%R%%LC%%D0%1100000
+%V%%R%%LC%%D0%60000
+%CO:E,8,0%
+%R%%PC%
+%R%inc
+%V%%R%%TC%%D1%D4/C4*100
+%V%%R%%TC%%D1%D5/C5*100
+%V%%R%%TC%%D1%D6/C6*100
+%V%%R%%TC%%D1%D7/C7*100
+%V%%R%%TC%%D1%D8/C8*100
+%CO:F,7,28%
+
+%R%Cpcity
+%V%%R%2700
+%V%%R%4700
+%V%%R%3800
+%V%%R%3300
+%V%%R%3000
+%CO:G,6,0%
+
+%R%Cyls
+%V%%R%6
+%V%%R%8
+%V%%R%6
+%V%%R%12
+%V%%R%8
+%CO:H,9,0%
+
+%R%Reg.
+%R%RS 27
+%R%289 COB
+%R%D 1
+%R%SWB 250
+%R%GTB 308

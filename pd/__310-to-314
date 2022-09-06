@@ -1,0 +1,14 @@
+3.14 (11 Oct 1990) c.f. 3.10 (10 Apr 1990)
+
+Likely to have been compiled with C3.1B
+
+New format dictionary
+
+Spell > Create > Dict Defn
+
+Spell > User Dictionary Options
+
+Support for German and Swedish - resources are bound for speed of loading
+
+
+[3.10 does appear to support HotLink with Presenter and GraphBox]

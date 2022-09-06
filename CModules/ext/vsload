@@ -1,0 +1,44 @@
+/* vsload.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/********************************************
+*                                           *
+* external definitions for ViewSheet loader *
+* MRJC                                      *
+* May 1989                                  *
+*                                           *
+********************************************/
+
+/*
+types of slot
+*/
+
+#define VS_TEXT 0
+#define VS_NUMBER 1
+
+/*
+error definition
+*/
+
+#define VSLOAD_ERR_BASE -5000
+
+#define VSLOAD_ERR_CANTREAD  VSLOAD_ERR_BASE - 0
+#define VSLOAD_ERR_NOMEMORY  VSLOAD_ERR_BASE - 1
+
+/*
+functions
+*/
+
+extern intl isvsfile(FILE *fin);
+extern intl loadvsfile(FILE *fin);
+extern void vsfileend(void);
+extern char *vstravel(intl col, intl row,
+					  intl *type, intl *decp, intl *justright, intl *minus);
+
+/* end of vsload.ext*/

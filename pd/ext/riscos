@@ -1,0 +1,151 @@
+/* riscos.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1989-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/*
+ * Title:       riscos.ext - exported objects from riscos.c
+ * Author:      Stuart K. Swales 24 Jan 1989
+ * History:
+ *  0.01    24-Jan-89   SKS created
+ *  0.02    26-Jan-89   made export conditional on RISCOS
+ *  0.03    07-Feb-89   export main_dbox,main_whandle
+ *  0.04    09-Feb-89   don't export main_dbox,main_whandle
+ *                      changed riscos_go() to accept startup filename
+ *  0.05    16-Feb-89   changed riscos_go(), added riscos_displaywindow()
+ *                      and riscos_setcolour()
+ *  0.06    14-Mar-89   brought up to date; abstracted exports
+*/
+
+#if RISCOS
+/* Only export objects if RISCOS */
+
+#ifndef __pd__riscos_ext
+#define __pd__riscos_ext
+
+
+#ifndef BOOL
+#define BOOL int
+#endif
+
+#ifndef TRUE
+#define TRUE 1
+#endif
+
+#ifndef FALSE
+#define FALSE 0
+#endif
+
+
+/* exported functions */
+
+extern BOOL riscos_adjustclicked(void);
+extern char *riscos_cleanupstring(char *str);
+extern BOOL riscos_createmainwindow(void);
+extern void riscos_destroymainwindow(void);
+extern void riscos_finalise(void);
+extern void riscos_finalise_once(void);
+extern void riscos_frontmainwindow(BOOL immediate);
+extern intl riscos_getbuttonstate(void);
+extern intl riscos_go(void);
+extern void riscos_initialise_once(void);
+extern BOOL riscos_initialise(void);
+extern void riscos_invalidatemainwindow(void);
+extern void riscos_invert(void);
+extern int  riscos_keyinbuffer(void);
+extern void riscos_non_null_event(void);
+extern const char *riscos_obtainfilename(const char *filename, BOOL forsaveop);
+extern BOOL riscos_quit_okayed(int nmodified);
+extern void riscos_printchar(int ch);
+extern void riscos_rambufferinfo(char **bufferp, intl *sizep);
+extern BOOL riscos_readfileinfo(riscos_fileinfo *rip /*out*/, const char *name);
+extern void riscos_readtime(riscos_fileinfo *rip /*inout*/);
+extern void riscos_removecaret(void);
+extern void riscos_resetwindowpos(void);
+extern void riscos_restorecaret(void);
+extern void riscos_restorecurrentwindowpos(void);
+extern void riscos_savecurrentwindowpos(void);
+extern void riscos_sendhelpreply(const char *msg, void *m);
+extern void riscos_sendslotcontents(const graphlinkp glp, int xoff, int yoff);
+extern void riscos_sendallslots(const graphlinkp glp);
+extern void riscos_sendsheetclosed(const graphlinkp glp);
+extern void riscos_setcaretpos(riscos_window w, int x, int y);
+extern void riscos_setcolour(int colour, int isbackcolour);
+extern void riscos_setcolours(int bg, int fg);
+extern void riscos_settitlebar(const char *filename);
+extern void riscos_settype(riscos_fileinfo *rip /*inout*/, int filetype);
+extern void riscos_updatearea(riscos_redrawproc redrawproc, riscos_window w,
+                              int x0, int y0, int x1, int y1);
+extern void riscos_visdelay_on(void);
+extern void riscos_visdelay_off(void);
+extern void riscos_visdelay_stop(void);
+extern void riscos_writefileinfo(const riscos_fileinfo *rip, const char *name);
+extern void print_file(const char *filename);
+
+
+/* exported variables */
+
+extern int       dragtype;
+extern dochandle draghandle;
+
+
+/* macro definitions */
+
+/* drag types */
+#define NO_DRAG_ACTIVE      0
+#define MARK_BLOCK          1
+#define MARK_ALL_COLUMNS    2
+#define MARK_ALL_ROWS       3
+#define INSERTING_REFERENCE 4
+
+
+#define window_NULL     NULL
+#define whandle_NULL    NULL
+#define ihandle_NULL    (-1)
+
+
+/* Sizes of window things in OS units */
+
+#define charwidth       16
+#define charheight      32
+
+#define iconbar_height  96
+
+#define title_height    (40+dy)
+#define hscroll_height  (40+dy)
+#define leftline_width  (dx)
+#define vscroll_width   (40+dx)
+
+
+/* RISC OS file types - get correct ones sometime! */
+
+#define        VIEW_FILETYPE    0x125
+#define        DRAW_FILETYPE    0xAFF
+#define     PDMACRO_FILETYPE    0xD21
+#define    LOTUS123_FILETYPE    0xDB0
+#define   PIPEDREAM_FILETYPE    0xDDE
+#define         CSV_FILETYPE    0xDFE
+#define      SPRITE_FILETYPE    0xFF9
+#define    PRINTOUT_FILETYPE    0xFF4
+#define         DTP_FILETYPE    0xFFF       /* NGardner says use this */
+#define        TEXT_FILETYPE    0xFFF
+
+#define   DIRECTORY_FILETYPE    0x1000
+#define APPLICATION_FILETYPE    0x2000
+#define     UNTYPED_FILETYPE    0x3000
+
+
+/* a very bad address */
+
+#define BADPTR ((void *) 0xDEADDEAD)
+
+
+#endif  /* __pd__riscos_ext */
+
+#endif  /* RISCOS */
+
+/* end of riscos.ext */

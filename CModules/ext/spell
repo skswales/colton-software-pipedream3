@@ -1,0 +1,98 @@
+/* spell.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1988-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/**************************************
+*                                     *
+* external header file for spellcheck *
+* MRJC                                *
+* May 1988                            *
+*                                     *
+**************************************/
+
+#ifndef __cmodules_spell_ext
+#define __cmodules_spell_ext
+
+#ifndef RC_INVOKED
+
+/*
+function declarations
+*/
+
+extern intl spell_addword(intl, char *);
+extern intl spell_checkword(intl, char *);
+extern intl spell_close(intl);
+extern intl spell_createdict(char *);
+extern intl spell_deleteword(intl, char *);
+extern intl spell_freemem(void);
+extern intl spell_load(intl);
+extern intl spell_nextword(intl, char *, char *, char *, intl *);
+extern intl spell_opendict(char *);
+extern intl spell_pack(intl, intl);
+extern intl spell_prevword(intl, char *, char *, char *, intl *);
+extern intl spell_setoptions(intl, intl, intl);
+extern void spell_stats(intl *, intl *, word32 *);
+extern intl spell_unlock(intl);
+
+#if MS
+
+/* define macro to cope with overlays */
+#define spell_iswordc(ch) (ch == '\0'\
+							? 0\
+							: (isalpha(ch)\
+								? 1\
+								: ((ch == '\'' || ch == '-')\
+									? 1\
+									: 0)))
+
+#else
+
+extern intl spell_iswordc(char ch);
+
+#endif
+
+/* wildcard characters */
+
+#define SPELL_WILD_SINGLE	'?'
+#define SPELL_WILD_MULTIPLE	'*'
+
+/* dictionary flags */
+
+#define DICT_WRITEINDEX 0x80
+#define DICT_READONLY   0x40
+
+/* maximum length of word body */
+#define MAX_WORD 31
+
+#endif /* RC_INVOKED */
+
+/*
+error definition
+*/
+
+#define SPELL_ERR_BASE        (-1000)
+
+#define SPELL_ERR_DICTFULL    (-1000)
+#define SPELL_ERR_EXISTS      (-1001)
+#define SPELL_ERR_FILE        (-1002)
+#define SPELL_ERR_CANTOPEN    (-1003)
+#define SPELL_ERR_BADDICT     (-1004)
+#define SPELL_ERR_NOMEM       (-1005)
+#define SPELL_ERR_BADWORD     (-1006)
+#define SPELL_ERR_READONLY    (-1007)
+#define SPELL_ERR_CANTCLOSE   (-1008)
+#define SPELL_ERR_NOTIMP      (-1009)
+#define SPELL_ERR_NOTFOUND    (-1010)
+#define SPELL_ERR_ESCAPE      (-1011)
+#define SPELL_ERR_CANTWRITE   (-1012)
+#define SPELL_ERR_CANTREAD    (-1013)
+#define SPELL_ERR_CANTENLARGE (-1014)
+
+#endif /* __cmodules_spell_ext */
+
+/* end of spell.ext */

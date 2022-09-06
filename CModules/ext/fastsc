@@ -1,0 +1,106 @@
+/* fastsc.ext */
+
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/. */
+
+/* Copyright (C) 1988-1998 Colton Software Limited
+ * Copyright (C) 1998-2015 R W Colton */
+
+/******************************************
+*                                         *
+* external definition for fastsc routines *
+* MRJC                                    *
+* March 1988                              *
+*                                         *
+******************************************/
+
+#ifndef FASTSC_EXT_SET
+#define FASTSC_EXT_SET
+
+/*
+co-ordinates of a window (rectangular region) on the screen buffer
+*/
+
+struct REGION
+{
+	/* current position */
+	int row, col;
+
+	/* window boundaries */
+	int r0, c0;           /* upper left corner */
+	int r1, c1;           /* bottom right corner */
+
+	/* scrolling region boundaries */
+	int sr0, sc0;         /* upper left corner */
+	int sr1, sc1;         /* bottom right corner */
+};
+
+/* alias for pointer to region */
+typedef struct REGION *winp;
+
+/* current video state/mode information */
+struct Vstate
+{
+	int Vmode;          /* video mode */
+	int Vpage;          /* current page */
+	int Vwidth;         /* width of current mode */
+	int Vheight;        /* height of current mode */
+	int Vheightmax;     /* maximum height of mode */
+	int Vmaxpag;        /* maximum page allowed */
+	int Vcard;          /* card type */
+	int Vcurstart;      /* cursor start scan line */
+	int Vcurend;        /* cursor end scan line */
+	int Vsync;          /* output Vsynced ? */
+	int Vspecial;       /* special EGA vertical modes */
+	int Vcurx;          /* x cursor position */
+	int Vcury;          /* y cursor position */
+	int Vattr;          /* attribute */
+};
+
+/* display adapter types */
+#define CARD_MDA  1  /* mono display adapter */
+#define CARD_CGA  2  /* colour/graphics adapter */
+#define CARD_EGA  3  /* extended graphics adapter */
+#define CARD_MCGA 4  /* MCGA of PS/2 */
+#define CARD_VGA  5  /* VGA */
+
+/*
+function declarations
+*/
+
+/* equip.c */
+
+extern struct Vstate Vcs;
+
+extern void getstate();
+extern void putstate();
+extern void setvmode(int, int, int);
+
+/* screen.c */
+
+extern void sb_filla(winp, uchar);
+extern void sb_fillc(winp, uchar);
+extern void sb_fillca(winp, uchar, uchar);
+extern void sb_init();
+extern void sb_getpos(int *, int *);
+extern void sb_move(winp, int, int);
+extern winp sb_new(int, int, int, int);
+extern void sb_rest(winp);
+extern void sb_save(winp);
+extern void sb_scrl(winp, int, uchar);
+extern void sb_set_scrl(winp, int, int, int, int);
+extern void sb_show();
+extern void sb_wa(winp, uchar, int);
+extern void sb_wc(winp, uchar, int);
+extern void sb_wca(winp, uchar, uchar, int);
+extern int sb_wsa(winp, const char *, uchar);
+
+/*
+macroed functions
+*/
+
+#define sb_free(win) free(win)
+#endif
+
+/* end of fastsc.ext */

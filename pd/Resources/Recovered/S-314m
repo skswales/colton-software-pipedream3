@@ -1,0 +1,596 @@
+saveas1:Spara genom att dra dokumentsymbolen till en öppen mapp
+template2:Mallhämtning misslyckat p.g.a. %s
+template3:Inte tillräckligt med minne för att hämta dialogrutor
+template6:Hittar inte malldokumentet
+wimpt1:type=%d
+wimpt2:%s har drabbats av ett inre fel (%s) och måste omedelbart avsluta
+xfersend1:Dålig dataöverföring, mottagaren död
+xferrecv1:Kan inte överföra dokumentet (använd *Set Wimp$Scrap <dokumentnamn>)
+xferrecv2:Misslyckad dataöverföring
+pd0:Meddelandedokumentet saknas eller är ej komplett, tag %s
+pd1:ISO8859-1
+pd2:Unrecognised arg -%s
+pd12:dct
+pd13:!Help
+pd14:key
+pd15:ini
+pd16:UtskrDokum
+pd17:<PipeDrea3$Dir>.ini
+pd18:<PipeDrea3$Dir>.!RunImage
+pd19:PipeDrea3$Path
+pd20:%sMacroFile
+pd21:EgenOrdl
+pd22:%slnk%d
+pd23:<PipeDrea3$Dir>.DictDefn
+pd24:<PipeDrea3$Dir>.ODctDefn
+pd25:Namnlös%d
+pd26:$$$AmbiguousTag
+pd27:Svenska
+pd39:Ctrl 
+pd40:Shift 
+pd41:Tryck ned MELLANSLAGET
+pd42:Inititierar...
+pd43:PipeDream har förstörts
+pd48:%d %s %d
+pd49:%d %.3s %d
+pd50:F%d
+pd51:Ny bredd
+pd52:Ny högermarginalposition
+pd53a:%ld ord hittade
+pd53b:%ld ord hittade
+pd53c:%ld sträng hittade
+pd53d:%ld strängar hittade
+pd54a:%ld sträng gömd
+pd54b:%ld strängar gömda
+pd61a:%d okända ord
+pd61b:%d okända ord
+pd62a:%d ord adderade till den egna ordlistan
+pd62b:%d ord adderade till den egna ordlistan
+pd63:%s av %s
+pd64:... %s klart ...
+pd65:Sidan %d.. Tryck M=Missa sidan, A=Alla sidor, ENTER=Utskrift av sidan, ESC=Avbryt utskriften
+pd65a:M
+pd65b:A
+pd67:Vill du spara det redigerade dokumentet '%s'?
+pd68a:%d dokument redigerat i %s: men ej sparat, vill du avsluta ändå?
+pd68b:%d dokument redigerade i %s: men ej sparade, vill du avsluta ändå?
+pd69:Det här dokumentet har relaterade dokument, vill du stänga det ändå?
+pd70:Det här dokumentet har relaterade länkar, vill du stänga det ändå?
+pd71:Dokumentet '%s' har samma arknamn so ett annat relaterat dokument. Vill du hämta det?
+pd72:det hör dokumentet kommer att ges samma namn som ett relaterat dokument. Vill du byta namn på det?
+pd75:Skapa egen ordlista
+pd76:Öppna egen ordlista
+pd77:Stäng egen ordlista
+pd80:Utskrift
+pd81:Skriver ut
+pd82:Länka
+pd83:Länkar
+pd84:Anagram
+pd85:Subgram
+pd86:Egna öppna ordlistor
+pd87:Lägg in ord i egen ordlista
+pd88:Ta bort ord ur egen ordlista
+pd89:Ge blocket stilkod
+pd90:Skriv över existerande dokument?
+pd91:Kan inte spara blocket till klippbordet - fortsätt ta bort?
+pd92:Detta är PipeDream-symbolen.|MKlicka VÄLJ för att påbörja ett nytt dokument.|MHämta ett dokument genom att dra det till symbolen.|MKlicka MENY för att städ eller avsluta arbetet med PipeDream.
+pd93:det här är en av PipeDreams dialogrutor.|MKlicka OK eller tryck RETURN för att verkställa.|MAnvänd ‹ och Š för att flytta mellan fälten.|MTryck Esc för att ångra.
+pd94:Det här är PipeDreams dokumentfönster.|M
+pd95:Drag ett dokument till fönstret, det skjuts in vid markören.
+pd96:Klicka VÄLJ för att 
+pd97:Klicka JUSTERA för att 
+pd98:placera markören i 
+pd99:skjut in en referens till 
+pd100:cell 
+pd101:redigeringsraden.|M
+pd102:.|M
+pd103:Dubbelklicka VÄLJ i övre vänstra hörnet för att markera hela dokumentet.|MDubbelklicka JUSTERA för att ta bort markeringar.|M
+pd104:Drag VÄLJ efter radkanten för att markera kolumner.|MDubbelklicka VÄLJ för att markera kolumnen.|M
+pd105:Drag VÄLJ efter kolumnkanten för att markera rader.|M
+pd106:Dubbelklicka VÄLJ för att markera raden.|M
+pd107:Raden visar en sidbrytning.|M
+pd108:Raden visar en definitiv sidbrytning.|M
+pd109:Här visas de aktuella cellkoordinaterna.|M
+pd110:Här visas den aktuella cellens formel.|M
+pd111:>Info,>Fönster,Städa,Avsluta
+pd112:Fönster
+pd113:Nytt fönster
+pd114:...
+pd115:Typsnitt
+pd116:System
+pd117:Storlek
+pd118:Bredd
+pd119:|Höjd
+pd120:Avstånd
+pd121:Ingen RISC OS
+pd122:%s utskriftsrutin
+pd123:a-+.0-9eE
+pd124:%.3f
+pd125:%s (%3.3X)
+pd126:%dK
+pd130a:- kan inte skapa ett nytt dokument
+pd131:Block
+pd132:Markör
+pd133:Redigera
+pd134:Dokument
+pd135:Layout
+pd136:Rättstavn
+pd137:Markera block
+pd138:Ta bort markeringar
+pd139:Kopiera blocket
+pd140:Kopiera till klippbord
+pd141:Klippbordsstorlek
+pd142:Flytta blocket
+pd143:Ta bort blocket
+pd144:Kopiera cell nedåt
+pd145:Kopiera cell åt höger
+pd146:Kopiera cell
+pd147:Sortera
+pd148:Sök
+pd149:Nästa matchning
+pd150:Föregående matchning
+pd151:Placera cellskydd
+pd152:Ta bort cellskydd
+pd153:Siffror <> Text
+pd154:Snapshot
+pd155:Räkna antal ord
+pd156:Formatera stycke
+pd157:Första kolumnen
+pd158:Sista kolumnen
+pd159:Nästa ord
+pd160:Föregående ord
+pd161:Centrera fönster
+pd163:Spara position
+pd164:Återställ position
+pd165:Byt position/markör
+pd167:Sök cell
+pd168:Definiera tangent
+pd169:Definiera fnk-tangent
+pd170:Definiera kommando
+pd171:Utför makrosekvens
+pd172:Bygg upp makrosekvens
+pd173:Ta bort tecken
+pd174:Skjut in mellanslag
+pd175:Skjut in tecken
+pd176:Ta bort ord
+pd177:Ta bort - cellslut
+pd178:Ta bort rad
+pd179:Skjut in rad
+pd180:Klistra
+pd181:Skjut in
+pd183:Byt SHIFT-läge
+pd184:Redigera formel
+pd185:Placera referens
+pd186:Dela rad
+pd187:Sammanfoga rader
+pd188:Skjut in rad i kolumn
+pd189:Ta bort rad ur kolumn
+pd190:Skjut in kolumn
+pd191:Ta bort kolumn
+pd192:Skapa ny kolumn
+pd193:Bryt sida
+pd194:Hämta
+pd195:Spara
+pd196:Spara inställningar
+pd197:Namn
+pd198:Nytt fönster
+pd199:Korta menyer
+pd200:Alternativ
+pd201:Färger
+pd202:Nästa dokument
+pd203:Föregående dokument
+pd204:Första dokumentet
+pd205:Sista dokumentet
+pd206:Skapa länkdokument
+pd207:Räkna om
+pd208:Omräkningsalternativ
+pd209:Hjälp
+pd210:Dokumentet
+pd211:Avsluta
+pd215:Kolumnbredd
+pd216:Högermarginal
+pd217:Lås rad
+pd218:Lås kolumn
+pd219:Flytta marginalen ->
+pd220:Flytta marginalen <-
+pd221:Vänsterställ
+pd222:Centrera
+pd223:Högerställ
+pd224:VCH-ställ
+pd225:Fri-ställ
+pd226:Antal decimaler
+pd227:Tkn parenteser
+pd228:Tkn minus
+pd229:Föregående tkn
+pd230:Efterföljande tkn
+pd231:Förinställt format
+pd232:Utskrift
+pd233:Ange parametrar
+pd234:Sidlayout
+pd235:Skrivarinställning
+pd236:Mikrosteg grad
+pd237:Typsnitt dokument
+pd238:Skjut in typsnitt
+pd239:Radavstånd utskrift
+pd240:Understykning
+pd241:Fet
+pd242:Utökad sekvens
+pd243:Kursiv
+pd244:Halvsteg ner
+pd245:Halvsteg upp
+pd246:Alternativt typsnitt
+pd247:Egendefinerad
+pd248:Ta bort stilkoder
+pd249:Ge blocket stilkod
+pd250:Vid inskrivn
+pd251:Dokumentet
+pd252:Ta bort ord ur ordlista
+pd253:Lägg in ord i ordlista
+pd254:Visa egna ordlistor
+pd255:Sök
+pd256:Skriv ut ordlista
+pd257:Länka fil till egen ordlista
+pd258:Skapa egen ordlista
+pd259:Öppna egen ordlista
+pd260:Stäng egen ordlista
+pd261:Komprimera egen ordlista
+pd261a:Alternativ för egen ordlista
+pd262:Lås ordlista
+pd263:Lås upp ordlista
+pd264:Markör upp
+pd265:Markör ned
+pd266:Markör vänster
+pd267:Markör höger
+pd268:Överst i kolumn
+pd269:Nederst i kolumn
+pd270:Början av cell
+pd271:Slutet av cell
+pd272:Rulla upp
+pd273:Rulla ned
+pd274:Rulla vänster
+pd275:Rulla höger
+pd276:Sida upp
+pd277:Sida ned
+pd278:Enter
+pd279:Radera
+pd280:Nästa kolumn
+pd281:Föregående kolumn
+pd282:Escape
+pd283:Paus
+pd284:Ersätt
+pd285:Nästa fönster
+pd286:Stäng fönster
+pd287:Städa
+pd288:Markera ark
+pd289:ingen
+pd290:,
+pd291:.
+pd292:mellanslag
+pd293:RISC OS
+pd294:Parallell
+pd295:Seriell
+pd296:Nätverk
+pd297:Egen
+pd298:F1
+pd299:F2
+pd300:F3
+pd301:F4
+pd302:F5
+pd303:F6
+pd304:F7
+pd305:F8
+pd306:F9
+pd307:F10
+pd308:F11
+pd309:F12
+pd310:Shift F1
+pd311:Shift F2
+pd312:Shift F3
+pd313:Shift F4
+pd314:Shift F5
+pd315:Shift F6
+pd316:Shift F7
+pd317:Shift F8
+pd318:Shift F9
+pd319:Shift F10
+pd320:Shift F11
+pd321:Shift F12
+pd322:Ctrl F1
+pd323:Ctrl F2
+pd324:Ctrl F3
+pd325:Ctrl F4
+pd326:Ctrl F5
+pd327:Ctrl F6
+pd328:Ctrl F7
+pd329:Ctrl F8
+pd330:Ctrl F9
+pd331:Ctrl F10
+pd332:Ctrl F11
+pd333:Ctrl F12
+pd334:Ctrl-Shift F1
+pd335:Ctrl-Shift F2
+pd336:Ctrl-Shift F3
+pd337:Ctrl-Shift F4
+pd338:Ctrl-Shift F5
+pd339:Ctrl-Shift F6
+pd340:Ctrl-Shift F7
+pd341:Ctrl-Shift F8
+pd342:Ctrl-Shift F9
+pd343:Ctrl-Shift F10
+pd344:Ctrl-Shift F11
+pd345:Ctrl-Shift F12
+pd346:Januari
+pd347:Februari
+pd348:Mars
+pd349:April
+pd350:Maj
+pd351:Juni
+pd352:Juli
+pd353:Augusti
+pd354:September
+pd355:Oktober
+pd356:November
+pd357:December
+pd358:Ja
+pd359:Nej
+pd360:SEK 
+pd361:%
+pd362:0.235
+pd363:0.001
+pd364:100
+pd365:LF
+pd366:CR
+pd367:CR,LF
+pd368:LF,CR
+e0:Inget fel
+e1:Raden för lång
+e2:Felaktigt namn
+e3:Minnet fullt
+e4:Hittar ej dokumentet
+e5:Felaktigt urval
+e6:Felaktig parameter
+e7:Redigerar formel
+e8:Kan inte öppna dokument
+e9:Kan inte läsa dokumentet
+e10:Kan inte skriva till dokument
+e11:Kan inte stänga dokument
+e12:Inte installerad för EGA/VGA
+e13:Felaktigt ^ fält
+e14:Inget listdokument
+e15:Loop
+e16:Slut på listan
+e17:Kan inte buffra dokument
+e18:Felaktigt alternativ
+e19:Inget markerat block
+e20:Escape
+e21:Felaktig kolumn
+e22:Äldsta positionen förlorad
+e23:Z88:
+e24:Felaktig formel
+e25:Felaktig markering
+e26:Utskriftsrutin saknas
+e27:Utskriftsrutin understödjer ej mikrosteg
+e28:Generellt fel
+e29:Överlappar
+e30:Kontrolltecken ignorerade
+e31:Kan inte skjuta in det här dokumentformatet
+e32:Lotus:
+e33:Inga sidor
+e34:Rättstavn:
+e35:Ord finns
+e36:Skrivare:
+e37:inte ett TAB-dokument:
+e38:Rader delade:
+e39:Minnesbrist: tvingad till kolumnomräkning
+e40:Felaktig sträng
+e41:Felaktig cell
+e42:Felaktigt område
+e43:ViewSheet:
+e44:Skyddad cell
+e45:Väntar på omräkning
+e46:Felaktig Draw-ritning
+e47:Felaktig typsnittsstorlek
+e48:Felaktigt radavstånd
+e49:'%s' är en mapp
+e50:Felaktig skalfaktor på Drawritningen
+e51:Skrivaren upptagen
+e52:Ingen RISC OS utskriftsrutin
+e53:Typsnittshanteraren:
+e54:Skriver redan ut
+e55:Länkar redan
+e56:Gör anagram redan
+e57:Gör subgram redan
+e58:Kan inte installera PipeDream
+e59:Drawritningar måsta sparas för import
+e60:Minnet fullt: kan inte skapa dialogrutor
+e61:Inte tillräckligt med minne, eller inte i *Desktop
+e62:Felaktig utskriftsskala
+e63:Inget markerat block i det här dokumentet
+e64:Minnet fullt: kan inte spara block på klippbordet
+e65:Minnet fullt: kan inte hämta block från klippbordet
+e66:Kan inte spara ett PipeDream-dokument i sig själv
+e67:Felaktigt språk
+e68:Ej installerad
+e1000:För många ordlistor öppna
+e1001:Dokumentet finns redan
+e1002:Filsystemsfel
+e1003:Kan inte öppna
+e1004:Felaktig ordlista
+e1005:Minnet fullt
+e1006:Felaktigt ord
+e1007:Ordlistan bara läsbar
+e1008:Kan inte stänga
+e1009:Inte implementerad
+e1010:Ordet saknas
+e1011:Escape
+e1012:Kan inte uppdatera ordlistan
+e1013:Kan inte läsa ordlistan
+e1014:Kan inte utöka ordlistan
+e1015:Felaktigt definitionsdokument för ordlistan
+e1016:Felaktigt tecken i ordlistans definitionsdokument
+e2000:Irr
+e2001:För många dokument
+e2002:Felaktig logaritm
+e2003:Felaktigt datum
+e2004:Lookup
+e2005:Blandade typer
+e2006:- rot
+e2007:Utbredd
+e2008:Division med noll
+e2009:Felaktigt index
+e2010:Stack overflow
+e2011:FP fel
+e2012:Cirkulär referens
+e2013:Dokumentet ej hämtat
+e2014:Mer än 1 dokument hämtat
+e5000:Kan inte läsa dokument
+e5001:Minnet slut
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+|
+| Boot file for PipeDream 3.10 (26-bit)
+|
+Set PipeDrea3$Dir <Obey$Dir>
+|
+If "<PipeDrea3$Help>"="" Then Set PipeDrea3$Help <PipeDrea3$Dir>.!Help
+If "<PipeDrea3$Version>"="" Then Set PipeDrea3$Version 3.10
+If "<PipeDrea3$Web>"="" Then Set PipeDrea3$Web http://croftnuisk.co.uk/coltsoft/pipedream/
+If "<PipeDrea3$Title>"="" Then Set PipeDrea3$Title PipeDream 3
+If "<PipeDrea3$Description>"="" Then Set PipeDrea3$Description Integrated spreadsheet and word processor
+If "<PipeDrea3$Publisher>"="" Then Set PipeDrea3$Publisher Colton Software
+|
+If "<File$Type_DDE>"="" Then Set File$Type_DDE PDream
+If "<Alias$@RunType_DDE>"="" Then SetMacro Alias$@RunType_DDE   Run <PipeDrea3$Dir>.!Run %%*0
+If "<Alias$@PrintType_DDE>"="" Then SetMacro Alias$@PrintType_DDE Run <PipeDrea3$Dir>.!Run -Print %%*0
+|
+If "<File$Type_D21>"="" Then Set File$Type_D21 PDCmdFil
+If "<Alias$@RunType_D21>"="" Then SetMacro Alias$@RunType_D21   Run <PipeDrea3$Dir>.!Run -Macro %%*0
+|
+If "<File$Type_DFE>"="" Then Set File$Type_DFE CSV
+|
+IconSprites <PipeDrea3$Dir>.!Sprites
+|
+| Leave file type sprites alone unless PipeDream 4 hasn't been seen
+If "<PipeDream$Dir>"="" Then IconSprites <PipeDrea3$Dir>.!SpritesF3

@@ -1,0 +1,446 @@
+saveas1:Zum Sichern Icon in ein Verzeichnisfenster ziehen
+template2:Schablone nicht geladen, weil %s
+template3:Zuwenig Speicher zum Laden der Dialogfelder
+template6:Schablonendatei nicht gefunden
+wimpt1:Typ=%d
+wimpt2:%s hat fatalen internen Fehler erlitten (%s) und muß sofort abbrechen
+xfersend1:Unzulässiger Datentransfer, Empfänger tot
+xferrecv1:Dateitransfer nicht möglich (*Set Wimp$Scrap <filename> verwenden)
+xferrecv2:Datentransfer mißlungen
+pd0:Fehlende oder unvollständige Nachrichtendatei, Markierung %s
+pd1:ISO8859-1
+pd2:Unbekanntes Arg -%s
+pd12:dct
+pd13:!Help
+pd14:key
+pd15:ini
+pd16:DumpedFile
+pd17:<PipeDrea3$Dir>.ini
+pd18:<PipeDrea3$Dir>.!RunImage
+pd19:PipeDrea3$Path
+pd20:%sMacroFile
+pd21:UserDict
+pd22:%slnk%d
+pd23:<PipeDrea3$Dir>.DictDefn
+pd24:<PipeDrea3$Dir>.ODctDefn
+pd25:Namenlos%d
+pd26:$$$AmbiguousTag
+pd39:Strg 
+pd40:‹ 
+pd41:Beliebige Taste drücken
+pd42:Initialisiert...
+pd43:PipeDream ist korrumpiert
+pd48:%d.%s %d
+pd49:%d.%.3s %d
+pd50:F%d
+pd51:Neue Breite
+pd52:Neuer rechter Rand
+pd53a:%ld Wort gefunden
+pd53b:%ld Wörter gefunden
+pd53c:%ld Kette gefunden
+pd53d:%ld Ketten gefunden
+pd54a:%ld Kette versteckt
+pd54b:%ld Ketten versteckt
+pd61a:%d unbekanntes Wort
+pd61b:%d unbekannte Wörter
+pd62a:%d Wort in Benutzerwörterbuch aufgenommen
+pd62b:%d Wörter in Benutzerwörterbuch aufgenommen
+pd63:%s von %s
+pd64:... %s fertig ...
+pd65:Seite %d.. Ü=Überspringen, A=Alle Seiten, ENTER=Diese Seite drucken, ESC=Druck anhalten
+pd65a:ÜU
+pd65b:A
+pd67:Geänderte Datei '%s' sichern?
+pd68a:%d Geänderte aber nicht gesicherte Datei in %s: wollen Sie wirklich aussteigen?
+pd68b:%d Geänderte aber nicht gesicherte Dateien in %s: wollen Sie wirklich aussteigen?
+pd69:Diese Datei hat abhängige Dokumente. Soll sie geschlossen werden?
+pd70:Diese Datei hat abhängige Verknüpfungen. Soll sie geschlossen werden?
+pd71:Datei '%s' hat gleichen Blattnamen wie ein anderes Basisdokument. Soll sie geladen werden?
+pd72:Dieser Datei würde derselbe Blattname zugewiesen wie einem anderen Basisdokument. Soll sie umbenannt werden?
+pd75:Benutzerwörterbuch anlegen
+pd76:Benutzerwörterbuch öffnen
+pd77:Benutzerwörterbuch schließen
+pd80:Auszug
+pd81:Stellt Auszug her
+pd82:Mischen
+pd83:Am Mischen
+pd84:Anagramme
+pd85:Subgramme
+pd86:Geöffnete Benutzerwörterbücher
+pd87:Wort in Benutzerwörterbuch einfügen
+pd88:Wort aus Benutzerwörterbuch löschen
+pd89:Auszeichnung einfügen
+pd90:Bestehende Datei überschreiben?
+pd91:Block kann nicht auf Album übernommen werden - trotzdem löschen?
+pd92:Dies ist das PipeDream Icon.|MZum Erstellen eines neuen Dokuments AUSWAHL klicken.|MDatei auf das Icon ziehen, um sie zu laden.|MZur Auswahl eines bestimmten Dokuments oder zum Verlassen von PipeDream MENU klicken.
+pd93:Dies ist ein PipeDream Dialogfeld.|MZum Bestätigen OK klicken oder RETURN drücken.|MZum Ansteuern der Felder ‹ und Š t benutzen.|MESCAPE zum Abbrechen.
+pd94:Dies ist ein PipeDream Dokumentenfenster.|M
+pd95:Zum Einfügen der Datei diese ins Fenster ziehen.
+pd96:AUSWAHL dient zum 
+pd97:SPEZIAL dient zum 
+pd98:Plazieren der Einfügemarke in 
+pd99:Einfügen eines Verweises auf 
+pd100:Zelle 
+pd101:die Bearbeitungszeile.|M
+pd102:.|M
+pd103:AUSWAHL in der oberen linken Ecke der Ränder zum Markieren des Blatts doppelklicken.|MSPEZIAL doppelklicken, um einen markierten Block zu leeren.|M
+pd104:AUSWAHL dem Spaltenrand entlang ziehen, um alle Zeilen zu markieren.|MAUSWAHL doppelklicken, um diese Spalte zu markieren.|M
+pd105:AUSWAHL dem Zeilenrand entlang ziehen, um alle Spalten zu markieren.|M
+pd106:AUSWAHL doppelklicken, um diese Zeile zu markieren.|M
+pd107:Diese Zeile ist ein Seitenwechsel.|M
+pd108:Diese Zeile ist ein fixierter Seitenwechsel.|M
+pd109:Dies sind die aktuellen Zellenkoordinaten.|M
+pd110:Dies ist der Inhalt der aktuellen Ausdruckszelle.|M
+pd111:>Info,>Fenster,Ordnen,Beenden
+pd112:Fenster
+pd113:Neues Fenster
+pd114:...
+pd115:Schrift
+pd116:Systemschrift
+pd117:Größe
+pd118:Breite
+pd119:|Höhe
+pd120:Abstand
+pd121:Kein RISC OS
+pd122:%s Druckertreiber
+pd123:a-+.0-9eE
+pd124:%.3f
+pd125:%s (%3.3X)
+pd126:%dK
+pd130a:- kann kein neues Dokument anlegen
+pd131:Blöcke
+pd132:Cursor
+pd133:Bearbeiten
+pd134:Dateien
+pd135:Layout
+pd136:Rechtschr.
+pd137:Block markieren
+pd138:Marken löschen
+pd139:Block kopieren
+pd140:Block auf Album kopieren
+pd141:Größe des Albums
+pd142:Block bewegen
+pd143:Block löschen
+pd144:Nach unten replizieren
+pd145:Nach rechts replizieren
+pd146:Replizieren
+pd147:Sortieren
+pd148:Suchen
+pd149:Nächste Fundstelle
+pd150:Vorherige Fundstelle
+pd151:Schutz einstellen
+pd152:Schutz löschen
+pd153:Zahl <> Text
+pd154:Schnappschuß
+pd155:Wortzählung
+pd156:Absatz formatieren
+pd157:Erste Spalte
+pd158:Letzte Spalte
+pd159:Nächstes Wort
+pd160:Vorheriges Wort
+pd161:Fenstermitte
+pd163:Position sichern
+pd164:Auf Position zurück
+pd165:Pos. und Einf'marke tauschen
+pd167:Auf Zelle gehen
+pd168:Taste definieren
+pd169:Funktionstaste definieren
+pd170:Befehl definieren
+pd171:Makrodatei ausführen
+pd172:Makrodatei aufzeichnen
+pd173:Zeichen löschen
+pd174:Leerzeichen einfügen
+pd175:Zeichen einfügen
+pd176:Wort löschen
+pd177:Bis Zellenende löschen
+pd178:Zeile löschen
+pd179:Zeile einfügen
+pd180:Kleben
+pd181:Einfügen
+pd183:Groß/klein
+pd184:Ausdruck ändern
+pd185:Verweis einfügen
+pd186:Zeile teilen
+pd187:Zeilen verbinden
+pd188:Zeile in Spalte einfügen
+pd189:Zeile in Spalte löschen
+pd190:Spalte einfügen
+pd191:Spalte löschen
+pd192:Spalte anhängen
+pd193:Seite einfügen
+pd194:Laden
+pd195:Sichern
+pd196:Initial-Datei sichern
+pd197:Name
+pd198:Neues Fenster
+pd199:Kurzmenüs
+pd200:Optionen
+pd201:Farben
+pd202:Nächste Datei
+pd203:Vorherige Datei
+pd204:Erste Datei
+pd205:Letzte Datei
+pd206:Verknüpfungsdatei
+pd207:Neukalkulieren
+pd208:Neukalk-Optionen
+pd209:Hilfe
+pd210:Über
+pd211:Beenden
+pd215:Spaltenbreite
+pd216:Rechter Rand
+pd217:Zeile fixieren
+pd218:Spalte fixieren
+pd219:Rand nach rechts
+pd220:Rand nach links
+pd221:Linksbündig
+pd222:Zentriert
+pd223:Rechtsbündig
+pd224:LZR-Ausrichtung
+pd225:Ohne Ausrichtung
+pd226:Dezimalstellen
+pd227:Neg. Klammer
+pd228:Neg. Vorzeichen
+pd229:Führende Zeichen
+pd230:Nachfolgende Zeichen
+pd231:Standardformat
+pd232:Drucken
+pd233:Parameter
+pd234:Seiten-Layout
+pd235:Druckerkonfiguration
+pd236:Mikrojustierung
+pd237:Druckerschrift
+pd238:Schrift einfügen
+pd239:Druckerzeilenabstand
+pd240:Unterstrichen
+pd241:Fett
+pd242:Erweiterung
+pd243:Kursiv
+pd244:Tiefstellung
+pd245:Hochstellung
+pd246:Altern. Schrift
+pd247:Benutzerdefiniert
+pd248:Auszeichnung entfernen
+pd249:Block auszeichnen
+pd250:Autom. Prüfung
+pd251:Dokument prüfen
+pd252:Wort aus B'wörterbuch löschen
+pd253:Wort in B'wörterbuch einfügen
+pd254:B'wörterbücher anzeigen
+pd255:Blättern
+pd256:Wörterbuch-Auszug
+pd257:Datei mit B'wörterbuch mischen
+pd258:B'wörterbuch anlegen
+pd259:B'wörterbuch öffnen
+pd260:B'wörterbuch schließen
+pd261:B'wörterbuch komprimieren
+pd261a:B'wörterbuch optionen
+pd262:Wörterbuch sperren
+pd263:Wörterbuch aufsperren
+pd264:Cursor hoch
+pd265:Cursor runter
+pd266:Cursor links
+pd267:Cursor rechts
+pd268:Spaltenanfang
+pd269:Spaltenende
+pd270:Zellenanfang
+pd271:Zellenende
+pd272:Hochrollen
+pd273:Runterrollen
+pd274:Linksrollen
+pd275:Rechtsrollen
+pd276:Seite hoch
+pd277:Seite runter
+pd278:Enter
+pd279:Ausradieren
+pd280:Nächste Spalte
+pd281:Vorherige Spalte
+pd282:Escape
+pd283:Pause
+pd284:Ersetzen
+pd285:Nächstes Fenster
+pd286:Fenster schließen
+pd287:Ordnen
+pd288:Blatt markieren
+pd289:ohne
+pd290:,
+pd291:.
+pd292:Leerzeichen
+pd293:RISC OS
+pd294:Parallel
+pd295:Seriell
+pd296:Netzwerk
+pd297:Benutzer
+pd298:F1
+pd299:F2
+pd300:F3
+pd301:F4
+pd302:F5
+pd303:F6
+pd304:F7
+pd305:F8
+pd306:F9
+pd307:F10
+pd308:F11
+pd309:F12
+pd310:Umsch F1
+pd311:Umsch F2
+pd312:Umsch F3
+pd313:Umsch F4
+pd314:Umsch F5
+pd315:Umsch F6
+pd316:Umsch F7
+pd317:Umsch F8
+pd318:Umsch F9
+pd319:Umsch F10
+pd320:Umsch F11
+pd321:Umsch F12
+pd322:Strg F1
+pd323:Strg F2
+pd324:Strg F3
+pd325:Strg F4
+pd326:Strg F5
+pd327:Strg F6
+pd328:Strg F7
+pd329:Strg F8
+pd330:Strg F9
+pd331:Strg F10
+pd332:Strg F11
+pd333:Strg F12
+pd334:Strg-Umsch F1
+pd335:Strg-Umsch F2
+pd336:Strg-Umsch F3
+pd337:Strg-Umsch F4
+pd338:Strg-Umsch F5
+pd339:Strg-Umsch F6
+pd340:Strg-Umsch F7
+pd341:Strg-Umsch F8
+pd342:Strg-Umsch F9
+pd343:Strg-Umsch F10
+pd344:Strg-Umsch F11
+pd345:Strg-Umsch F12
+pd346:Januar
+pd347:Februar
+pd348:März
+pd349:April
+pd350:Mai
+pd351:Juni
+pd352:Juli
+pd353:August
+pd354:September
+pd355:Oktober
+pd356:November
+pd357:Dezember
+pd358:Ja
+pd359:Nein
+pd360:DM
+pd361:%
+pd362:0.235
+pd363:0.001
+pd364:100
+pd365:LF
+pd366:CR
+pd367:CR,LF
+pd368:LF,CR
+e0:Kein Fehler
+e1:Zeile zu lang
+e2:Ungültiger Name
+e3:Speicher voll
+e4:Datei nicht gefunden
+e5:Ungültige Auswahl
+e6:Ungültiger Parameter
+e7:Ausdruck ändern
+e8:Kann Datei nicht öffnen
+e9:Kann Datei nicht lesen
+e10:Kann nicht auf Datei schreiben
+e11:Kann Datei nicht schließen
+e12:Nicht installiert für EGA/VGA
+e13:Ungültiges ^ Feld
+e14:Keine Listendatei
+e15:Schleife
+e16:Listenende
+e17:Kann Datei nicht puffern
+e18:Ungültige Option
+e19:Kein markierter Block
+e20:Escape
+e21:Ungültige Spalte
+e22:Älteste Pos. verloren
+e23:Z88:
+e24:Ungültiger Ausdruck
+e25:Ungültige Marke
+e26:Kein Treiber geladen
+e27:Treiber unterstützt keine Mikrodickte
+e28:Allgemeines Versagen
+e29:Überlappung
+e30:Steuerzeichen ignoriert
+e31:Dateiformat kann nicht eingefügt werden
+e32:Lotus:
+e33:Keine Seiten
+e34:Rechtschreibung:
+e35:Wort vorhanden
+e36:Drucker:
+e37:Keine Tab-Datei
+e38:Zeilen geteilt
+e39:Kein Platz: Spalten-Neukalk. erzwungen
+e40:Ungültige Kette
+e41:Ungültige Zelle
+e42:Ungültiger Bereich
+e43:ViewSheet:
+e44:Geschützte Zelle
+e45:Wartet auf Neukalkulation
+e46:Ungültige Draw-Datei
+e47:Ungültige Schriftgröße
+e48:Ungültiger Zeilenabstand
+e49:'%s' ist ein Verzeichnis
+e50:Ungültiger Draw-Datei Skal.-Faktor
+e51:Drucker in Betrieb
+e52:Kein RISC OS Druckertreiber
+e53:Schrift-Manager:
+e54:Bereits am Erstellen eines Auszugs
+e55:Bereits am Mischen
+e56:Bereits am Bilden von Anagrammen
+e57:Bereits am Bilden von Subgrammen
+e58:Installation von PipeDream nicht möglich
+e59:Draw-Dateien müssen vor Import gesichert werden
+e60:Speicher voll: Dialogfeld kann nicht angelegt werden
+e61:Zuwenig Speicher oder nicht in *Desktop-Umgebung
+e62:Ungültige Druckerskala
+e63:Kein markierter Block in diesem Dokument
+e64:Speicher voll: kann Block nicht auf Album speichern
+e65:Speicher voll: kann Block nicht von Album holen
+e66:Sichern einer Datei von PipeDream auf sich selbst nicht möglich
+e67:Ungültige Sprache
+e68:Nicht installiert
+e1000:Zuviele offene Wörterbücher
+e1001:Datei besteht schon
+e1002:Speichersystemfehler
+e1003:Öffnen nicht möglich
+e1004:Ungültiges Wörterbuch
+e1005:Kein Speicherplatz mehr
+e1006:Ungültiges Wort
+e1007:Wörterbuch nur zum Lesen
+e1008:Schließen nicht möglich
+e1009:Nicht implementiert
+e1010:Wort nicht gefunden
+e1011:Escape
+e1012:Wörterbuch kann nicht aktualisiert werden
+e1013:Wörterbuch kann nicht gelesen werden
+e1014:Wörterbuch kann nicht erweitert werden
+e1015:Ungültige Wörterbuch-Definitionsdatei
+e1016:Ungültiges Zeichen in Wörterbuch-Definitionsdatei
+e2000:Irr
+e2001:Zuviele Dateien
+e2002:Ungültiger Logarithmus
+e2003:Ungültiges Datum
+e2004:Tabelle
+e2005:Gemischte Typen
+e2006:-ve Wurzel
+e2007:Weitergeführt
+e2008:Division durch Null
+e2009:Ungültiger Index
+e2010:Stapelüberlauf
+e2011:FP-Fehler
+e2012:Kreisverweis
+e2013:Datei nicht geladen
+e2014:Mehr als 1 Datei geladen
+e5000:Datei nicht lesbar
+e5001:Speicher voll

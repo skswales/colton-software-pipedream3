@@ -1,0 +1,22 @@
+| This Source Code Form is subject to the terms of the Mozilla Public
+| License, v. 2.0. If a copy of the MPL was not distributed with this
+| file, You can obtain one at https://mozilla.org/MPL/2.0/.
+|
+| Copyright (C) 2021-2022 Stuart Swales
+|
+Set PD3DevRoot$Dir <Obey$Dir>
+
+Set CModules$Dir <PD3DevRoot$Dir>.CModules
+Set CModules$Path <CModules$Dir>.
+
+URD <PD3DevRoot$Dir>
+Dir &
+Set AMU_PD3DevRoot <PD3DevRoot$Dir>
+
+| Use Headers & Tools from current DDE, e.g, C:
+If "<C$Path>"="" Then Error AcornC/C++ Tools not yet opened
+
+If "<Hdr$Path>"="" Then Set Hdr$Path $.AcornC_C++.DDE-Export.APCS-32.Hdr.Global.
+IfThere Hdr:Macros Then Else Error 0 You will need to grab a copy of the Hdr directory from a modern DDE
+
+Filer_OpenDir <PD3DevRoot$Dir>.pd.r32
